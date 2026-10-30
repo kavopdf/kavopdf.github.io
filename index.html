@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://api.github.com" crossorigin>
+<title>KavoPDF — serious PDF editing, offline and fast</title>
+<meta name="description" content="KavoPDF is a free Android app with 26 PDF tools — create, edit, annotate, merge, split, compress, sign, redact and OCR. Everything runs on your phone, offline. Download the latest APK.">
+<meta property="og:title" content="KavoPDF — serious PDF editing, offline and fast">
+<meta property="og:description" content="26 PDF tools on your phone. Create, edit, merge, compress, sign and redact — offline, no account.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kavopdf.github.io/">
+<meta property="og:site_name" content="KavoPDF">
+<meta property="og:image" content="https://kavopdf.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KavoPDF — serious PDF editing, offline and fast">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KavoPDF — serious PDF editing, offline and fast">
+<meta name="twitter:description" content="26 PDF tools on your phone. Create, edit, merge, compress, sign and redact — offline, no account.">
+<meta name="twitter:image" content="https://kavopdf.github.io/og.png">
+<meta name="theme-color" content="#12151A">
+
+<script>
+(function () {
+  try { localStorage.removeItem('theme'); } catch (e) {}
+  document.documentElement.classList.add('js');
+})();
+</script>
+
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  color-scheme: dark;
+  --bg:          #12151A;
+  --surface:     #191D24;
+  --surface-2:   #222831;
+  --ink:         #EAE7E2;
+  --ink-soft:    #99A0AB;
+  --line:        #2C333D;
+  --accent:      #F5A524;
+  --accent-ink:  #1A1206;
+  --accent-text: #F5A524;
+  --accent-soft: #3A2C12;
+  --focus-ring:  #F5A524;
+  --shadow:      0 1px 2px rgba(0,0,0,.45), 0 18px 44px -22px rgba(0,0,0,.85);
+
+  --s-1:.25rem; --s-2:.5rem; --s-3:.75rem; --s-4:1rem; --s-5:1.5rem;
+  --s-6:2rem; --s-7:3rem; --s-8:4rem; --s-9:6rem; --s-10:8rem;
+
+  --text-xs:  clamp(.75rem, .74rem + .05vw, .81rem);
+  --text-sm:  clamp(.86rem, .84rem + .08vw, .93rem);
+  --text-base:clamp(1rem, .97rem + .15vw, 1.1rem);
+  --text-lg:  clamp(1.15rem, 1.1rem + .25vw, 1.32rem);
+  --text-xl:  clamp(1.3rem, 1.2rem + .45vw, 1.62rem);
+  --text-2xl: clamp(1.7rem, 1.45rem + 1vw, 2.4rem);
+  --text-3xl: clamp(2.05rem, 1.7rem + 1.7vw, 3.2rem);
+  --text-4xl: clamp(2.5rem, 1.8rem + 3.4vw, 4.4rem);
+
+  --ease-out-soft: cubic-bezier(.22,1,.36,1);
+  --ease-in-out:   cubic-bezier(.65,0,.35,1);
+  --ease-spring:   cubic-bezier(.34,1.56,.64,1);
+
+  --container: min(1140px, 92vw);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --page-t-out: 180ms;
+  --page-t-in: 300ms;
+}
+
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  /* an anchor jump should not park the heading behind the sticky header */
+  scroll-padding-top: 92px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-padding-top: 96px;
+}
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: var(--text-base);
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -.015em;
+}
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-lg); line-height: 1.25; }
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+ul { list-style: none; }
+
+:focus:not(:focus-visible) { outline: none; }
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; border-radius: 3px; }
+
+.skip {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ink); color: var(--bg);
+  padding: .7rem 1.1rem; z-index: 200; border-radius: 0 0 8px 0;
+}
+.skip:focus { left: 0; top: 0; }
+
+.container { width: var(--container); margin-inline: auto; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid transparent;
+  transition: border-color .25s var(--ease-out-soft);
+}
+.site-header.scrolled { border-bottom-color: var(--line); }
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--s-4); padding-block: var(--s-4);
+}
+.brand {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.34rem;
+  letter-spacing: -.02em; color: var(--ink); white-space: nowrap;
+}
+.brand img { width: 38px; height: 38px; border-radius: 10px; flex: none; border: 1px solid var(--line); }
+.nav-links { display: none; gap: var(--s-6); align-items: center; }
+.nav-links a {
+  color: var(--ink-soft); font-size: var(--text-sm); font-weight: 500;
+  position: relative; padding-block: 2px;
+}
+.nav-links a::after {
+  content: ""; position: absolute; left: 0; bottom: -2px; height: 1.5px; width: 100%;
+  background: var(--accent); transform: scaleX(0); transform-origin: left;
+  transition: transform .32s var(--ease-out-soft);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover::after, .nav-links a[aria-current="page"]::after { transform: scaleX(1); }
+.nav-links a[aria-current="page"] { color: var(--ink); }
+.nav-right { display: flex; align-items: center; gap: var(--s-2); }
+.nav-right .nav-cta { display: none; }
+
+.nav-toggle {
+  width: 52px; height: 52px; border-radius: 14px; border: 1px solid var(--line);
+  display: grid; place-items: center; color: var(--ink);
+  transition: color .2s var(--ease-out-soft), border-color .2s var(--ease-out-soft), background .2s var(--ease-out-soft);
+}
+.nav-toggle:hover { border-color: var(--ink-soft); background: var(--surface-2); }
+.nav-toggle svg { width: 26px; height: 26px; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .82rem 1.35rem; border-radius: var(--radius-sm);
+  font-size: var(--text-sm); font-weight: 600; letter-spacing: .005em;
+  border: 1px solid transparent; cursor: pointer; white-space: nowrap;
+  transition: transform .14s var(--ease-spring), background .2s var(--ease-out-soft),
+              border-color .2s var(--ease-out-soft), color .2s var(--ease-out-soft);
+}
+.btn svg { width: 17px; height: 17px; flex: none; }
+.btn:active { transform: translateY(1px) scale(.985); }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: color-mix(in srgb, var(--accent) 86%, #ffffff); }
+.btn-ghost { border-color: var(--line); color: var(--ink); }
+.btn-ghost:hover { background: var(--surface-2); border-color: var(--ink-soft); }
+.btn-lg { padding: 1rem 1.7rem; font-size: var(--text-base); }
+
+/* ---------- Views ---------- */
+main { flex: 1 0 auto; }
+.view { display: none; }
+.view.is-active { display: block; transition: opacity var(--page-t-in) var(--ease-out-soft), transform var(--page-t-in) var(--ease-out-soft); }
+.view.is-active.is-entering { opacity: 0; transform: translateY(14px); transition-duration: 0s; }
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) { animation: page-out var(--page-t-out) var(--ease-in-out) both; }
+  ::view-transition-new(root) { animation: page-in var(--page-t-in) var(--ease-out-soft) both; }
+}
+@keyframes page-out { to { opacity: 0; transform: translateY(-8px); } }
+@keyframes page-in { from { opacity: 0; transform: translateY(14px); } }
+
+/* ---------- Section rhythm ---------- */
+section { padding-block: clamp(3.2rem, 7.5vw, 6.5rem); }
+.view { padding-block: 0; }   /* the inner <section> supplies the padding */
+.band { background: var(--surface); border-block: 1px solid var(--line); }
+
+.eyebrow {
+  font-size: var(--text-xs); font-weight: 600; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent-text);
+  display: inline-flex; align-items: center; gap: .5rem;
+}
+.eyebrow::before { content: ""; width: 18px; height: 1.5px; background: var(--accent); display: inline-block; }
+.lede { color: var(--ink-soft); font-size: var(--text-lg); max-width: 58ch; }
+.muted { color: var(--ink-soft); }
+
+/* ---------- Hero ---------- */
+.hero { padding-block: clamp(2.4rem, 6vw, 5rem) clamp(3rem, 7vw, 6rem); }
+.hero-grid { display: grid; gap: clamp(2.5rem, 6vw, 4rem); align-items: center; }
+.hero h1 { max-width: 15ch; text-wrap: balance; }
+.hero h1 em { font-style: italic; color: var(--accent-text); }
+.hero .lede { margin-top: var(--s-5); }
+.hero-cta { display: flex; gap: var(--s-3); margin-top: var(--s-7); flex-wrap: wrap; }
+.hero-meta { margin-top: var(--s-6); display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5); font-size: var(--text-sm); color: var(--ink-soft); }
+.hero-meta span { display: inline-flex; align-items: center; gap: .4rem; }
+.hero-meta svg { width: 15px; height: 15px; color: var(--accent-text); flex: none; }
+.hero-visual { display: flex; justify-content: center; }
+
+/* ---------- Phone ---------- */
+.phone {
+  width: min(318px, 82vw); aspect-ratio: 9 / 19.2;
+  background: #0B0D10; border-radius: 40px; padding: 9px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.35), 0 40px 80px -30px rgba(0,0,0,.7);
+  position: relative; flex: none;
+}
+.phone::after {
+  content: ""; position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+  width: 74px; height: 5px; border-radius: 4px; background: rgba(0,0,0,.22); z-index: 4;
+}
+.phone-screen {
+  width: 100%; height: 100%; border-radius: 32px; overflow: hidden;
+  background: #101116; position: relative; contain: paint;
+}
+.screen { position: absolute; inset: 0; padding: 32px 12px 12px; display: none; flex-direction: column; overflow: hidden; }
+.screen.is-on { display: flex; animation: fadeSwap .42s var(--ease-out-soft); }
+@keyframes fadeSwap { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.phone-screen.scrollable .screen { padding: 0; }
+.app-head { display: flex; align-items: center; gap: 9px; padding: 29px 13px 11px; background: var(--accent); flex: none; }
+.app-head .app-titles { min-width: 0; }
+.app-head .app-title { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: #FFFFFF; letter-spacing: -.01em; line-height: 1.05; display: block; }
+.app-head .app-sub { font-size: 7.5px; color: rgba(255,255,255,.88); line-height: 1.25; display: block; margin-top: 1px; }
+.app-head .app-theme { width: 16px; height: 16px; margin-left: auto; color: #FFFFFF; opacity: .95; flex: none; }
+.app-scroll { flex: 1; min-height: 0; overflow: hidden; position: relative; }
+.app-track { padding: 11px 11px 0; animation: appScroll 36s cubic-bezier(.45,0,.25,1) infinite; }
+.app-track:not(.is-paused) { will-change: transform; }
+.app-track.is-paused { animation-play-state: paused; }
+.app-cat { font-size: 7.5px; font-weight: 700; letter-spacing: .15em; color: var(--accent); margin: 12px 2px 7px; }
+.app-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+.app-card { background: #242223; border: 1px solid #30333A; border-radius: 12px; padding: 9px 9px 10px; }
+.app-card .app-ic { color: var(--accent); margin-bottom: 7px; }
+.app-card .app-ic svg { width: 17px; height: 17px; }
+.app-card b { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 8.8px; font-weight: 600; color: #EDEEF2; line-height: 1.22; }
+.app-card i { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-style: normal; font-size: 7px; color: #9EA2AB; line-height: 1.35; margin-top: 3px; }
+@keyframes appScroll {
+  0%, 5%    { transform: translateY(0); }
+  45%, 55%  { transform: translateY(calc(-1 * var(--scroll-max, 0px))); }
+  95%, 100% { transform: translateY(0); }
+}
+.phone-screen.scrollable::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 68px; background: linear-gradient(to bottom, rgba(16,17,22,0), #101116 86%); pointer-events: none; z-index: 3; }
+
+/* page mockup (read view) */
+.scr-top { display: flex; align-items: center; gap: 7px; padding: 8px 9px; background: #1B2028; border-radius: 10px; border: 1px solid #242A33; }
+.scr-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+.scr-name { font-size: 9.5px; font-weight: 600; color: #E7E9EC; }
+.scr-sub { font-size: 7.5px; color: #868D99; margin-left: auto; }
+.page { flex: 1; margin-top: 9px; background: #F6F3ED; border-radius: 10px; padding: 14px 13px; position: relative; overflow: hidden; }
+.line { height: 4px; border-radius: 3px; background: #DCD5C8; margin-bottom: 7px; }
+.line.h { height: 7px; background: #C6BCA9; margin-bottom: 10px; }
+.line.w40 { width: 40%; } .line.w45 { width: 45%; } .line.w46 { width: 46%; } .line.w52 { width: 52%; } .line.w56 { width: 56%; } .line.w58 { width: 58%; } .line.w60 { width: 60%; } .line.w62 { width: 62%; } .line.w64 { width: 64%; } .line.w70 { width: 70%; } .line.w74 { width: 74%; } .line.w76 { width: 76%; } .line.w78 { width: 78%; } .line.w80 { width: 80%; } .line.w84 { width: 84%; } .line.w86 { width: 86%; } .line.w88 { width: 88%; } .line.w90 { width: 90%; } .line.w92 { width: 92%; }
+.hl { background: #FBE0A8; border-radius: 3px; height: 9px; margin: 3px 0 9px; width: 88%; }
+.textbox { position: absolute; right: 12px; bottom: 62px; width: 96px; border: 1.4px dashed #E39A0F; border-radius: 6px; padding: 5px 6px; background: rgba(227,154,15,.08); }
+.textbox span { display: block; height: 3.5px; border-radius: 2px; background: #C9A88A; margin-bottom: 4px; }
+.textbox span:last-child { margin-bottom: 0; width: 62%; }
+.ink-stroke { position: absolute; inset: 0; }
+.ink-stroke path { stroke: #E39A0F; stroke-width: 2.4; fill: none; stroke-linecap: round; }
+.scr-tools { display: flex; justify-content: space-around; align-items: center; margin-top: 9px; padding: 8px 6px; background: #1B2028; border-radius: 10px; border: 1px solid #242A33; }
+.scr-tools svg { width: 15px; height: 15px; stroke: #868D99; }
+.scr-tools .on-wrap { background: rgba(245,165,36,.14); border-radius: 7px; padding: 4px; display: grid; place-items: center; }
+.scr-tools .on { stroke: var(--accent); }
+.viewfinder { flex: 1; margin-top: 9px; border-radius: 10px; background: #22262E; position: relative; overflow: hidden; display: grid; place-items: center; }
+.doc-outline { width: 62%; aspect-ratio: 1/1.35; background: #F6F3ED; border-radius: 4px; position: relative; box-shadow: 0 6px 18px rgba(0,0,0,.5); }
+.doc-outline::before, .doc-outline::after { content: ""; position: absolute; width: 12px; height: 12px; border: 2px solid var(--accent); }
+.doc-outline::before { top: -5px; left: -5px; border-right: 0; border-bottom: 0; }
+.doc-outline::after { bottom: -5px; right: -5px; border-left: 0; border-top: 0; }
+.doc-inner { padding: 12px 10px; }
+.shutter { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); width: 34px; height: 34px; border-radius: 50%; background: #fff; border: 3px solid rgba(255,255,255,.35); }
+
+/* real screenshot frame */
+.showcase { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; margin-top: var(--s-8); }
+.showcase .phone { margin-inline: auto; }
+.showcase h2 { margin-bottom: var(--s-4); }
+.showcase p { color: var(--ink-soft); font-size: var(--text-sm); max-width: 52ch; }
+
+/* ---------- Mode switch ---------- */
+.mode-panel {
+  display: grid; gap: clamp(1.8rem, 4vw, 3rem); align-items: center;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 24px; padding: clamp(1.5rem, 3.5vw, 2.75rem);
+}
+.mode-copy h2 { margin-top: var(--s-4); margin-bottom: var(--s-6); max-width: 13ch; }
+.mode-caption { margin-top: var(--s-5); max-width: 38ch; }
+.mode-link { display: inline-flex; align-items: center; gap: .35rem; margin-top: var(--s-5); font-size: var(--text-sm); font-weight: 600; color: var(--accent-text); }
+.mode-link svg { width: 14px; height: 14px; }
+.mode-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.mode-visual { display: flex; justify-content: center; }
+.mode-visual .phone { width: min(278px, 66vw); }
+@media (min-width: 900px) { .mode-panel { grid-template-columns: 1.05fr .95fr; } }
+.mode-list { margin-top: var(--s-6); border-top: 1px solid var(--line); }
+.mode-item { width: 100%; text-align: left; display: block; position: relative;
+  padding: var(--s-4) 0 var(--s-4) var(--s-5); border-bottom: 1px solid var(--line); }
+.mode-item::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 3px; height: 0; border-radius: 2px; background: var(--accent); transition: height .28s var(--ease-out-soft); }
+.mode-item[aria-selected="true"]::before { height: 62%; }
+.mode-item b { display: block; font-weight: 600; font-size: var(--text-base); color: var(--ink-soft); transition: color .2s var(--ease-out-soft); }
+.mode-item span { display: block; font-size: var(--text-sm); color: var(--ink-soft); margin-top: 3px; max-width: 44ch; }
+.mode-item:hover b, .mode-item[aria-selected="true"] b { color: var(--ink); }
+
+/* ---------- Cards / bento ---------- */
+.bento { display: grid; gap: var(--s-5); grid-template-columns: 1fr; margin-top: var(--s-7); }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: var(--s-6); display: flex; flex-direction: column;
+  transition: transform .35s var(--ease-out-soft), box-shadow .35s var(--ease-out-soft), border-color .35s var(--ease-out-soft);
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+.card-icon { width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-text); margin-bottom: var(--s-4); flex: none; }
+.card-icon svg { width: 21px; height: 21px; }
+.card h3 { margin-bottom: var(--s-3); }
+.card p { color: var(--ink-soft); font-size: var(--text-sm); }
+.card .cat-tools { font-size: var(--text-xs); margin-top: var(--s-3); color: var(--ink-soft); opacity: .85; letter-spacing: .005em; }
+.card .card-link { margin-top: auto; padding-top: var(--s-4); font-size: var(--text-sm); font-weight: 600; color: var(--accent-text); display: inline-flex; align-items: center; gap: .35rem; }
+.card .card-link svg { width: 14px; height: 14px; }
+.all-tools {
+  display: flex; align-items: center; gap: var(--s-5); flex-wrap: wrap;
+  background: var(--accent); color: var(--accent-ink); border-radius: var(--radius);
+  padding: clamp(1.4rem, 3vw, 2rem); margin-top: var(--s-5);
+  transition: transform .3s var(--ease-out-soft);
+}
+.all-tools:hover { transform: translateY(-3px); }
+.all-tools .at-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(26,18,6,.14); display: grid; place-items: center; flex: none; }
+.all-tools .at-icon svg { width: 22px; height: 22px; color: var(--accent-ink); }
+.all-tools h3 { font-size: var(--text-xl); }
+.all-tools p { font-size: var(--text-sm); opacity: .82; margin-top: var(--s-2); max-width: 54ch; }
+.all-tools .go { margin-left: auto; display: inline-flex; align-items: center; gap: .4rem; font-weight: 600; font-size: var(--text-sm); flex: none; }
+.all-tools .go svg { width: 18px; height: 18px; }
+.cat-count { font-family: 'Fraunces', serif; font-size: var(--text-2xl); line-height: 1; color: var(--accent-text); margin-bottom: var(--s-2); }
+
+/* ---------- Chips ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-6); }
+.chip { font-size: var(--text-sm); padding: .45rem .9rem; border-radius: 100px; border: 1px solid var(--line); color: var(--ink-soft); background: var(--surface); display: inline-flex; align-items: center; gap: .4rem; }
+.chip svg { width: 13px; height: 13px; color: var(--accent-text); flex: none; }
+
+/* ---------- Steps ---------- */
+.steps { margin-top: var(--s-7); border-top: 1px solid var(--line); }
+.step { display: grid; grid-template-columns: auto 1fr; gap: var(--s-4) var(--s-6); padding-block: var(--s-6); border-bottom: 1px solid var(--line); align-items: start; }
+.step-num { font-family: 'Fraunces', serif; font-size: var(--text-xl); color: var(--accent-text); line-height: 1; padding-top: .15em; font-variant-numeric: tabular-nums; }
+.step h3 { margin-bottom: var(--s-2); }
+.step p { color: var(--ink-soft); font-size: var(--text-sm); max-width: 62ch; }
+.step code { font-family: ui-monospace, 'SF Mono', 'Cascadia Code', monospace; font-size: .86em; background: var(--surface-2); padding: .1em .4em; border-radius: 5px; }
+
+/* ---------- Feature catalogue ---------- */
+.cat { margin-top: var(--s-8); }
+.cat-head { display: grid; gap: var(--s-3); border-bottom: 1px solid var(--line); padding-bottom: var(--s-5); }
+.cat-head .cat-num { font-family: 'Fraunces', serif; font-size: var(--text-sm); color: var(--accent-text); letter-spacing: .1em; }
+.cat-head h2 { font-size: var(--text-2xl); }
+.cat-head p { color: var(--ink-soft); font-size: var(--text-sm); max-width: 60ch; }
+.feat-grid { display: grid; gap: var(--s-4); grid-template-columns: 1fr; margin-top: var(--s-6); }
+.feat {
+  display: flex; gap: var(--s-4); align-items: flex-start;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: var(--s-5);
+  transition: transform .3s var(--ease-out-soft), border-color .3s var(--ease-out-soft), box-shadow .3s var(--ease-out-soft);
+}
+.feat:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); box-shadow: var(--shadow); }
+.feat-icon { width: 40px; height: 40px; border-radius: 11px; background: var(--accent-soft); color: var(--accent-text); display: grid; place-items: center; flex: none; }
+.feat-icon svg { width: 20px; height: 20px; }
+.feat h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: var(--text-base); margin-bottom: var(--s-2); letter-spacing: -.005em; }
+.feat p { color: var(--ink-soft); font-size: var(--text-sm); }
+
+/* ---------- Accordion ---------- */
+.faq-list { margin-top: var(--s-7); border-top: 1px solid var(--line); max-width: 74ch; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-q {
+  width: 100%; text-align: left; display: flex; align-items: flex-start; justify-content: space-between;
+  gap: var(--s-4); padding-block: var(--s-5); font-weight: 600; font-size: var(--text-base);
+  font-family: 'Inter', sans-serif; color: var(--ink); transition: color .2s var(--ease-out-soft);
+}
+.faq-q:hover { color: var(--accent-text); }
+.faq-q svg { width: 18px; height: 18px; flex: none; margin-top: .28em; color: var(--ink-soft); transition: transform .3s var(--ease-out-soft), color .2s; }
+.faq-item[data-open="true"] .faq-q svg { transform: rotate(45deg); color: var(--accent-text); }
+.faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .38s var(--ease-out-soft); }
+.faq-item[data-open="true"] .faq-a { grid-template-rows: 1fr; }
+.faq-a > div { overflow: hidden; }
+.faq-a p { color: var(--ink-soft); font-size: var(--text-sm); padding-bottom: var(--s-5); max-width: 68ch; }
+
+/* ---------- CTA band ---------- */
+.cta-band { background: var(--surface); border-block: 1px solid var(--line); }
+.cta-inner { display: grid; gap: var(--s-6); align-items: center; }
+.cta-band h2 { font-size: var(--text-3xl); }
+.cta-band p { color: var(--ink-soft); margin-top: var(--s-4); max-width: 48ch; }
+
+/* ---------- Download ---------- */
+.dl-card { display: grid; gap: var(--s-6); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.5rem, 4vw, 2.5rem); box-shadow: var(--shadow); }
+.dl-head { display: flex; gap: var(--s-5); align-items: center; }
+.app-icon { width: 72px; height: 72px; border-radius: 18px; flex: none; border: 1px solid var(--line); }
+.dl-title h3 { font-size: var(--text-xl); }
+.dl-title p { color: var(--ink-soft); font-size: var(--text-sm); }
+.dl-specs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--s-3) var(--s-5); border-top: 1px solid var(--line); padding-top: var(--s-5); }
+.spec dt { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .1em; color: var(--ink-soft); font-weight: 600; }
+.spec dd { font-size: var(--text-sm); font-weight: 500; margin-top: 2px; }
+.dl-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; }
+@media (max-width: 560px) { .dl-actions .btn { width: 100%; } }
+.dl-note { font-size: var(--text-xs); color: var(--ink-soft); display: flex; align-items: center; gap: .45rem; }
+.dl-note svg { width: 14px; height: 14px; flex: none; color: var(--accent-text); }
+
+/* ---------- Prose ---------- */
+.prose { max-width: 68ch; }
+.prose h2 { margin-bottom: var(--s-4); }
+.prose h3 { margin-top: var(--s-7); margin-bottom: var(--s-3); font-family: 'Inter', sans-serif; font-weight: 600; font-size: var(--text-base); }
+.prose p { color: var(--ink-soft); margin-bottom: var(--s-4); }
+.prose ul { margin-bottom: var(--s-4); display: grid; gap: var(--s-2); }
+.prose li { color: var(--ink-soft); padding-left: 1.3rem; position: relative; }
+.prose li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.prose a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.prose strong { color: var(--ink); font-weight: 600; }
+.updated { font-size: var(--text-xs); color: var(--ink-soft); letter-spacing: .02em; }
+
+/* ---------- Contact ---------- */
+.contact-grid { display: grid; gap: var(--s-5); margin-top: var(--s-7); }
+.contact-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s-6); display: flex; flex-direction: column; }
+.contact-card a.link { color: var(--accent-text); font-weight: 600; word-break: break-word; }
+.contact-card a.link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Split page layouts (FAQ, privacy, contact) ---------- */
+.split { display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.split .faq-list, .split .contact-grid { margin-top: var(--s-7); }
+.split .faq-list, .split .prose { max-width: none; }
+.split .contact-grid { grid-template-columns: 1fr; }
+@media (min-width: 900px) {
+  .split { grid-template-columns: .85fr 1.15fr; }
+  .split > .split-intro { position: sticky; top: 104px; }
+  .split .faq-list, .split .contact-grid { margin-top: 0; }
+}
+
+/* ---------- FAQ grouped ---------- */
+.faq-jump { margin-top: var(--s-6); display: grid; gap: var(--s-2); }
+.faq-jump a, .toc a { font-size: var(--text-sm); color: var(--ink-soft); display: inline-flex; align-items: center; gap: .5rem; transition: color .2s var(--ease-out-soft); }
+.faq-jump a:hover, .toc a:hover { color: var(--accent-text); }
+.faq-jump a::before, .toc a::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: .5; flex: none; }
+.faq-group { padding-bottom: var(--s-6); margin-bottom: var(--s-6); border-bottom: 1px solid var(--line); }
+.faq-group:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
+.faq-group > h2 { font-size: var(--text-xl); margin-bottom: var(--s-3); }
+.faq-group > p { color: var(--ink-soft); font-size: var(--text-sm); margin-bottom: var(--s-5); max-width: 60ch; }
+.faq-group .faq-list { margin-top: 0; max-width: none; border-top: 0; }
+.faq-group .faq-item:first-child { border-top: 1px solid var(--line); }
+
+/* ---------- Privacy ---------- */
+.toc { margin-top: var(--s-6); display: grid; gap: var(--s-2); }
+.summary-card { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius-sm); padding: var(--s-5); margin-bottom: var(--s-7); }
+.summary-card h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: var(--text-base); margin: 0 0 var(--s-2); }
+.summary-card p { color: var(--ink-soft); font-size: var(--text-sm); }
+.policy-block, [id^="faq-"] { scroll-margin-top: 92px; }
+.policy-block { padding-block: var(--s-6); border-bottom: 1px solid var(--line); }
+.policy-block:first-of-type { padding-top: 0; }
+.policy-block:last-of-type { border-bottom: 0; padding-bottom: 0; }
+.policy-block h3 { margin-top: 0; }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--line); padding-block: var(--s-8) var(--s-6); margin-top: auto; background: var(--bg); }
+.footer-top { display: grid; gap: var(--s-7); }
+.footer-brand { max-width: 34ch; }
+.footer-brand p { color: var(--ink-soft); font-size: var(--text-sm); margin-top: var(--s-4); }
+.footer-cols { display: grid; gap: var(--s-5) var(--s-6); grid-template-columns: repeat(3, minmax(0,1fr)); }
+.footer-col h4 { font-family: 'Inter', sans-serif; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .12em; color: var(--ink-soft); font-weight: 600; margin-bottom: var(--s-3); }
+.footer-col ul { display: grid; gap: var(--s-2); }
+.footer-col a { font-size: var(--text-sm); color: var(--ink-soft); }
+.footer-col a:hover { color: var(--accent-text); }
+.footer-bottom { margin-top: var(--s-7); padding-top: var(--s-5); border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-5); justify-content: space-between; font-size: var(--text-xs); color: var(--ink-soft); }
+
+/* ---------- Mobile menu ---------- */
+.mobile-menu {
+  position: fixed; inset: 0; background: var(--bg); z-index: 90;
+  transform: translateX(100%); transition: transform .38s var(--ease-out-soft), visibility .38s;
+  display: flex; flex-direction: column; padding: var(--s-6) 6vw; visibility: hidden;
+}
+.mobile-menu.open { transform: none; visibility: visible; }
+.mobile-menu-head { display: flex; justify-content: space-between; align-items: center; padding-block: var(--s-3) var(--s-7); }
+.mobile-menu nav { display: grid; gap: var(--s-1); }
+.mobile-menu nav a { font-family: 'Fraunces', serif; font-size: 1.9rem; color: var(--ink); padding-block: var(--s-3); border-bottom: 1px solid var(--line); }
+.mobile-menu nav a[aria-current="page"] { color: var(--accent-text); }
+.mobile-menu .btn { margin-top: var(--s-7); width: 100%; }
+.mobile-menu-foot { margin-top: auto; padding-top: var(--s-6); border-top: 1px solid var(--line); font-size: var(--text-sm); color: var(--ink-soft); }
+.mobile-menu-foot p { margin-bottom: var(--s-2); }
+.mobile-menu-foot a { color: var(--accent-text); font-weight: 600; }
+
+/* ---------- Reveal ---------- */
+.js [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity .5s var(--ease-out-soft), transform .5s var(--ease-out-soft); }
+.js [data-reveal].is-revealed { opacity: 1; transform: none; }
+
+/* ---------- Responsive ---------- */
+@media (min-width: 700px) {
+  .dl-specs { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .contact-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .feat-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (min-width: 860px) {
+  .hero-grid { grid-template-columns: 1.02fr .98fr; }
+  .bento { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .bento .card:first-child { grid-column: 1 / -1; }
+  .cta-inner { grid-template-columns: 1.3fr .7fr; }
+  .cta-inner .btn-row { justify-self: end; }
+  .footer-top { grid-template-columns: 1.2fr 1fr; }
+  .cat-head { grid-template-columns: 5rem 1fr; align-items: baseline; }
+  .cat-head h2 { grid-column: 2; }
+  .cat-head p { grid-column: 2; }
+  .cat-head .cat-num { grid-row: 1 / span 3; padding-top: .5rem; }
+  .showcase { grid-template-columns: .85fr 1.15fr; }
+}
+@media (min-width: 1000px) {
+  .nav-links { display: flex; }
+  .nav-right .nav-cta { display: inline-flex; }
+  .nav-toggle { display: none; }
+  .bento { grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--s-6); }
+  .bento .card:first-child { grid-column: span 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important; scroll-behavior: auto !important;
+  }
+  .js [data-reveal] { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand" href="#home" data-nav="home">
+      <img src="data:image/png;base64,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" alt="" width="30" height="30">
+      KavoPDF
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features" data-nav="features">Features</a></li>
+      <li><a href="#download" data-nav="download">Download</a></li>
+      <li><a href="#faq" data-nav="faq">FAQ</a></li>
+      <li><a href="#privacy" data-nav="privacy">Privacy</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="btn btn-primary nav-cta" href="#download" data-nav="download">Get the app</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-head">
+    <span class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAAk20lEQVR4nO3da7BlZX3n8d/zPGutc+1zTjfphjBaScVoDI5Cuo2CBiJeEhqVi2WMNJAM3ghNzZhJJjXJ6NRM1UhSScXRmKFJahBUWhBzQYyCYqIEHC4m3QPlqHhNnLE0TUP3uZ+z11rP88yL3TRNN930ac7Za+/1fD+lb7z1svez/9912Wsts/GU5woAkB7b9AYAAJpBAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABKVNb0BAPqRMVKUtTLmaf5dHyQpxh5vFFYZAQDwJGPkrBTVqWWM5pe0XMVuDCTJKEYZo4lhI6PMKnfyQTGKFgwiAgBAxiizqr2qWo8vRyM99ySzXOpVL7Eve74tO9GaJ/+TZa2bH/CVN7NL8Yf749iwGc5VOMUnjgwwKMzGU57b9DYAaIwxckadWvsX4+SIOWXKvOXn7cSI3vryLHNxasQMjRsFqRuAKBkp6NF9MSv0wLfCP34//J//G+/9Zti3EJ01EyMyhgwMDAIApMtalbXmluJPbTJv2uJe9UL78ufbqTEjq3IpSqqDKq/DrwIYDWVS1FAuDZtyIf5wf/zUQ+HL3wx3PuSjMRPDilwhGAQEAEhR99LuwrJOmdLbznFXnJ39+EajKi6XKr0U5eyT/7EjxXjgeoAPypxyp2LY1FX8u6+Ha++qv/SNkDszlHMo0O8IAJAcZ9WptVzGi17qPnhZvmnSlMtxuZIxsvaI/f3j0C2BtRofNrK6/R/8v72p2r+o0aED/y76EwEA0uKsFjqaHNH/uDx/40ttVapTyR3l554r5YOs0eiQHlvUuz9WfWqXHxs2zipwKNCXCACQiu4O/qMz8c0vdddekZ80qsXOgX99dfmgIlOe6zO7w6//zzLKjHA6qC9xJzCQBGsUomYW4q+8zH3kN/KJIc0vy5jVn/6SnFXttbCkC17uPn5lMV5ooXPgogL6CkcAQPsZoxDlfbzxncUbt7jl5RiC7NpPZB80NqT9y7rqhur23f6kdab2a/6H4vgRZaD9rNHCcvzoO4sLz3QLCzHGXkx/PXG9YV2hm7YX5/6snV6ImevFn4vjRACAlsszPTobL9rsXr/Fzc3Eoz3eZ404q+VSmdN7Lsgyp+VKtod/Oo6NAABtlmfaMxPftMV9+F358nK0a3PS/9gyp8WFePZp7tbtRe54alAfIQBAa3Wn/8Wb3c7thYJCaGD6dzmn6dm49Sz37te5R6djwUPI+gMBANrp0OkffPS+R+f9j7o9TvP74tW/nG093T42Fx0XA/oAAQBaqN+mvyRjFIMmRszvviGbGDHeN3Y4goOaXhQAVlsfTv8u5zQ7F8853f3WeW7/fOTOgMbxCQCt0rfTvytzWpqLv/7K7Cc2muWSg4CG9dPSAPDs9Pn0l2SMqlqnbDRvP8ctlpGfhDarz1YHgBNijJzTnum+nv5dzqpajpe/IpsaMzVXAhrVlwsEwEocfM7Pm1/mbrqqCKF/p7+eOAjYMGle+dOGg4Bm9esaAXB8rFXlVfv4ie3FzVf39b7/QT5odFTnvtCWNUcATervZQLgmKxV7eVDvPmq4oKXu4XFGOMAPGvBWXUW4gWbs1PXm7KiAY0hAMCg6k7/2sdbthdbN7uZ6bha73XpjbEhjRQKPBqiOQQAGEiHT/+ZmA/O8xWMUafS+vVm25lubpkbAhrDXzwweAZ6+h9krXxQ7U/kLcRYFQQAGDAtmf5GdRnPep7dMG4q3hLTEAIADJJ2TH9Jxqgu9Yrn2/Xjqpt7TGniCAAwMFoz/buM0WIpHzgF1JhBXj5Ye+bAP58U+c1GQ1o2/busYfo3afBXEFabkYyVNVJUp1Y8JAExKnPKnWKUj8Sgd1o5/dE4FhGe5KyMVHotLWm5jM7p1CljrboRiFHWmumFuHcuZlbjw6ZwypzqQAnWFtMfa4R1BElyVjFqZlE+xA1j5tzT7UufZ02Il56VFdmB+R6iiiF95Vvh/u8GZ3XLg+FfpuPe+bh+1AxlHBCslXZP//6/abndzMZTntv0NqBJzipKs4syilvPcL/wM/aiM+yp600xahRULseDY91IMWqokAqjWtML8cFvh7sfCX+9y3/v0bhuxAzn8p5Xfq+mFk//GJVlemxWr7ymM7ekzLED0QACkLTMaWZRRvHVL7JXvy57zWk2y025HCuv7nN6nekO/if+C0YxyEdZo9xpuJBy86O98cZ76xvu8d9/LE6NGWe4uX91tHj6S6q91k2YP/pU9Z//qv6xCVNzK0ATWrSgsBLGyBo9Nhdfe5r9zfPz15zmnNH8UgxLB54nkx/6zu5DjtONPfDbYR81t6S4GE8a03+6KL/i7OwjX/Z/8vl6qdJoIR96+/+nddo9/dW9ruSUWdUslea0a03h+FjTHd/xTS91H72yGMo1vxCj5Kyse+b/epeRuo9wqbyW5+L6Uf3er2QveY658sZqdlljQzTgxLV/+kflTnNz8f7vhtHCcMjYFG4ES85hj4+v6zg7H63VCT+QyxhlTj5o9vG49SX24T8YOu/Fdu9c22ZWz7R++nc5K1/qge/F4Zyz/40hAGk58vHxisqOe6//GLoZWOhoXaGPXZVfvNntmYn5avwvJyWR6R+istx85Z9Cp+z3d9e0G3/3CTFGPsiHNXx8vLMqK0WvnduLizbbx+fjqtQlES6N6S8pRplMX/y6764QjgCaQgASYo0WluPH3lls3bKGw8Vaea/g48evHnrVC+30Ag04Ls5qqUpl+heZ5mbjZx4OU6OGa0UNIgCpyJwen48XbXav3+LmZtd2uFirqlbm9J4LsjxT5XnW4zNwVgsdjRe6+aqWT39JISofMrv/OfxgX8wzdv+bRACS4KxmF+NrT7M3XFksLcce3H6ZOS0sxLNPczvfVSyXkQAcQ55p71w878UHrp/Ptf36efeOwg/eVXcq7gRuGAFIRZR+Z2s2lMv3an88c5qbj2/Y4l59mp1d5LV/Ty/PtGcmXrzZfeyqfF2hhc6J/xxrIHiv8XFz79f8334tTI1x/qdhrV5rkCQ5q5nF+NoX2bNf5BZ6fkY+KL77tRk7ek/r4PTfub2IXmXV8ukfJWM1sxj/+HN109sCiQCkoHuK9d2vy4zp9YN6nNXSos751+41L7LTCxwEPMWh0z/46H37fxBZ1xqfMjs+X9/xELv/faHtKy553bP/rz/DnX2aW2riPEyUjNFv/lI2lPOMoCelOP29xsfNPQ/5D9zlN02ZimOAPtD2RZc8Y1QHnfMCkxXNzF9rVHXi5p+0z9lgqpqfA0lJTv8YNZSr9vr9z9RzS7H1/38HBZ9DmxmjqtaGcXPBz2XVUjNnYIxRWWvdhHnD6XaaS8GpTv8oLXtdfm35pW+E9ePG8+zP/tD2pZc2Y7RU6uwX2I3rm9z7Nkax1qtPc+vHDjxlOlkpTn+pU2l8g7n2rvovHvQb1/Hk5z7S9tWXNmu0WMYzf8qMjjX50F1rVJXx5c+ziV/3S3H6Rylqwybz2fv8h77gN603FdO/n7T6hhPowPPWo1ezu93GaLlSZtN9X1iC0z8Ede8Dv+bW6k+/4Du1hjJ+CNBf2r4GE2aMOpVO3WAue0VWLjd58r27JZtOMtvOdHMNXYpoVprT3znJmiuur977yTqK6d+P2r4Mk2eNhjL1w463MRpK8sEvyU5/68xlO8rbdvnnbDSKTP9+xCmg9uufL17/bEnPpD79d/uTJ02nanqbcBRtX4xAc5j+J09yw1dfa/t6BBrC9Gf697+2L0mgCUx/pv9AaPuqBHqO6c/0HxRtX5hAbyU4/WvP9B9UbV+bQA+lOf0nRuUycynTfwDxM1BgFRgja7VnOl68JbHpP27ufsT/4e31Fx8JJ08w/QcMAQCeLWvko+YW4ptf5j7yriKEJKZ/VWty0ty527/12rIK5qRxnvMzeAgA8KxYq6pWiPET24s3bHHLyzHEhKb/JTvKPDNjmXjG5yAiAMCJs1a1lw/xlu3F1i1ubjZao9a/APnQ6Z85kzmm/6Bq+44KsGa607/28ZbtxdbNbmY6Otv+tx0cOf1Dwo/4HnQEADgRh0//mZgncDjN9G8ZAgCsGNOf6d8OBABYGaY/0781CACwAkx/pn+bEADgeDH9mf4tQwCA48L0Z/q3DwEAnhnTn+nfSgQAeAZMf6Z/WxEA4FiY/kz/FiMAwFEx/Zn+7UYAgKfH9Gf6tx4BAJ4G05/pnwICAByO6c/0TwQBAJ6C6c/0TwcBAJ6U4PSPUlkx/RNFAIADUpz+UYqa2mju2MX0T1HbFzhwfDKnsk5r+oegPFPldc2t1Z9+wVvL9E9O29c4cBwyp+lF5TZ+4uqEpr9zkjVX/Hn5lw/4TetNwfRPD6eAkLrc6fH5+IsvMLf/drH1DDc7m8r0t85ctqO8bZd/zkajqBCb3iz0XNtXOnBMeaY9M/Gize7mq4vCxtn5mLmmt2mNPWX67/YnT5pO1fQ2oSEEAOnqTv+LN7ud2wtfx9laCU7/qm56m9AcTgEhUYdO/+Cj90x/JIcAIEVHTn/b9q8C0x9HavuqB47A9Gf6o6vtCx94KqY/0x8HtX3tA4dg+jP9cai2L3/gCUx/pj8O0/ZvACCJ6c/0x9Np+5cAYPoz/XEUbf8eIHlMf6Y/jqbtXwWkjenP9McxtP3bgIQx/Zn+OLa2fyGQKqY/0x/PqO3fCSSJ6c/0x/Fo+9cC6WH6M/1xnNr+zUBiEpz+tWf64wS1/cuBlKQ5/SdG5TJzKdMfK8cLYdAGRipy/Wg6vek/bu5+xP/h7fUXHwknTzD9sTIEAAPPGkXpB3vjm890O69KZfpXtSYnzZ27/VuvLatgTho3lW96mzBoCAAGm7UqaxVO73tL9u5fyhTSmv6X7CjzzIxlqpn+WDkCgAFmrWqvEOINVxbnn+kW9sc6semfOZM5pj9OUNu/K2iv7vSvfbxle3H+Fje9N8rImKY3a40dOf1DaHqbMLA4AsBAOnT6b93sZmZikTe9TWuP6Y/VxREABs+R0z9PYE+G6Y9VRwAwYJj+TH+sFgKAQcL0Z/pjFREADAymP9Mfq4sAYDAw/Zn+WHUEAAOA6c/0x1ogAOh3TH+mP9YIAUBfY/oz/bF2CAD6F9Of6Y81RQDQp5j+TH+sNQKAfsT0Z/qjBwgA+g7Tn+mP3iAA6C9Mf6Y/eoYAoI8w/Zn+6KUEvl4YEAlO/xgVoianzJ27mP5oAEcA6Avd11olNf1DlDEaGzWfftBvu650lumPXmv7lwyDIHOaXlRu4yeuTmb6B7lMxpht15af3u3Hho0zTH/0Wtu/Z+h7udNj8/HVL7T/8cL8VS90s7NpTH8na81lO8rbdvmNkyYEhdj0ZiE9bf+qob/lmfbMxIs2u5uvLgobZ+dj5prepjV2YPo7c9mO8rbd/uQpU9VNbxNSRQDQmO70v3iz27m98HWcrZXc9J9k+qNJXARGMw6d/sFH75n+QK8RADTgyOlv274Smf7oQ23/2qH/5I7pz/RHX2j7Nw99Jsu0Z0ZMf6AftP3Lh36SO9Nh+jP90Tfa/v1D/zDaOxdfs9l+7Oqc6Q/0A34Gil6wVtVyfP0Z9j+cn4npD/QHAoBesEZlqXN+xnYqlRXTH+gLBAA9YowWOjKSMU1vyhpj+mNQEAD0jm376BfTHwOl7YfiQA8x/TFYCACwOpj+GDgEAFgFTH8MIgIAPFtMfwwoAgA8K0x/DC4CAJw4H1TkMk5MfwwiAgCcIB80NqS5Ur92XcX0xyDiPgDgRFS1JifNHbv8u26oZpe1cR3TH4OHAAAr1p3+d+72264rZczYkHxoepuAlSMAwMocnP6X7CgzZ3LH9Meg4hoAsAKHTf+M6Y9BRgCA43Xk9A9MfwwyAgAcF6Y/2ocAAM+M6Y9WIgDAM2D6o60IAHAsTH+0GAEAjioETa5n+qO1CADw9EJUXugvvuwv+7PSWaY/WogAAE/PSEHm1gfqfQsa5V5ftBEBAI7Ox51XD/3Kz7sfTceCu+bROgQAeHrGyAcpxJuuKi7e7PbMxJwGoF0IAHBU1qiuFXzcuZ0GoIUIAHAs1sp7GoB2IgDAM6ABaCsCADwzGoBWIgDAcaEBaB8CABwvGoCWIQDACtAAtAkBAFbm8AZMR+dkTNObBawcAQBW7EADQrzpquLNL3MzCzFEWRqAQUMAgBNx8Djg5quLT2wvah8rL8v3CQOFBQucIGsUoxYW4wUvdzdfVfgQaxqAgcJqBU6cMXJWM9Nx62Z3y/ai9jQAg4SlCjxbeaaZGRqAwcM6BVYBDcAgYpECq4MGYOCwQoFVQwMwWFiewGqiARggrE30jjEKsemNWHs0AIOChYkeMVLtNVooJPB2dRqAgcCqRC/4oOEx7fg7f/MDfnzKVHXTG7T2aAD6H0sSvRCjjDWdKl5xXXXXrjA5SQOA5rEe0StRRW6i1bYd5Z27PQ0AGsdiRO+EEI1T5nQJDQD6ACsRPRWDMqfMGRoANI5liF4LkQbQAPQF1iAaEDgOoAHoAyxANOPIBpSVWn+XGA1AX2H1oTGHNuCOXX5qo1FUbHsEjmyA41uIhrD00KRuA6w1b7u+uubWKkqZa/+twoc1YKmiAWgG6w4NC0GFU5Te+8n6iusrWeNSasDNVxXjhRY6NAANYNGheSFKUc/ZaG7b5S/bUVqXSgPm5uJ5L7YP/8HQeS+2e+dinjW9TUgMAUBfiFKn0smT5rbdCTXAWS10tK7Qx67KL97s9szQAPQUAUAfqeoUG1BWil47txc0AD1GANBfEmyAtfJewUcagB4jAOg7NIAGoDcIAPoRDaAB6AECgD5FA2gA1hoBQP+iATQAa4oAoK/RABqAtUMA0O9oAA3AGiEAGAA0gAZgLRAADAYaQAOw6ggABgYNoAFYXQQAg4QG0ACsIgKAAUMDaABWCwHA4KEBNACrggBgINEAGoBnjwBgUB3ZgNo3vU1rjAZgdREADLCDDbh0R+kyMzFKA4AVIAAYbFWtkyfM3zzkL3x/5+5vhYlxk2ADhnKZprcKg4gAYOBVXieNm7//Vrzw/eWdD/mJCVPVTW/TGntKA7a4H+yNMrJEACtEANAGtdfUqPLMXLKjvHO3n5xMpQEK8cZ35O97S2ak0svyhcZKsF7QErVX5pS5tBpQexnpPb+a3/COPIRY0wCsBIsF7RFCcg0wRjKa3hvP3+Ju2V7UngZgBVgpaJUUGyAVuWZm4tbNNAArwzJB2yTYAEl5RgOwYqwRtBANoAE4HiwQtBMNoAF4RqwOtBYNoAE4NpYG2owG0AAcA+sCLUcDaACOhkWB9qMBNABPixWBJNAAGoAjsRyQChpAA3AY1gISQgNoAA7FQkBaaAANwEGsAiSHBtAAdLEEkCIaQAMgAoBkHdmAslJseqvWGg3Aofjwka5DG3DHLj+10Sgqtj0CNAAH8ckjad0GWGvedn11za1VlDKnEJrerDV2ZAMy1/Q2oQkEAKkLQYVTlN77yfqK6ytZ4xJrQFXH6UUakCICAChEKeo5G81tu/xlO0rrUmnA7Gzceoa7/beLX3yBeXw+5jQgMQQAkKQodSqdPGlu251QAzKn2fn4qhfY23976I1nuD2zMc+a3ib0EAEAnlTVSTZgUb6OH99eXLzZ7ZmhAQkhAMBTpNkA7xV83EkDEkMAgMMl2ABraUCKCADwNGgADUgBAQCeHg2gAa1HAICjogE0oN0IAHAsNIAGtBgBAJ4BDaABbUUAgGdGA2hAKxEA4LjQABrQPgQAOF40gAa0DAEAVoAG0IA2IQDAytAAGtAaBABYMRpAA9qBAAAnggbQgBYgAMAJogE0YNARAODEHdoA41Tk8jQAg4MAAM/KwQb82nXVXKmxoRQbMJTLNL1VOAEEAHi2qlob15nPfTWc/nudz301rFtnqrrpbVpjT2nAFveDvVFGlggMGgIArAIfNDak+VLbrivv3O0nJ1NpgEK88R35+96SGan0skyUgcLHBawOHzSSK3Pmkh0JNaD2MtJ7fjW/4R15CLGmAQOFzwpYNT4oc2k1wBjJaHpvPH+Lu2V7UXsaMEj4oIDVFBJsgFTkmpmJWzfTgAHDpwSssgQbICnPaMDg4SMCVh8NoAEDgc8HWBM0gAb0Pz6clotSiE1vxBP6Z0t6gwZ0G+AYM/2KT6bNouSsRgvFpidvlNQfW9JjNKD2camiAX2Kj6W1YlRmtX9e9307ZI1O3hiVOy3Mx/u+E0YKjgPSasDNVxXjhRY6NKAf8Zm0We60bz7e/92QFabZseusFhZ033ficGFSOwhQwg2Ym4vnvdg+/AdD573Y7puPmWt6m/BUBKDNopQ5OSPvm39WV8drJE/uFNBBaTbAWS10tK7QTduLc3/WTi/QgP5CANrMB60bNp/4il+cj3nW2PD1QUNj5lO76u8/FodoQHoNWC6VOb3ngixzWq54ZlwfIQBtFqPyTD+ajvd9O+TNnQVyVouLuvuRkPL070qzAZnT4kI8+zR36/Yid0p7CfQXAtByzmp2UXc/ElxDw7cboX0z8X99J442fSmiH6TZAOc0PRu3nuXe/Tr36HQseIdMfyAALeeDpsbMX+/yP3q0mdMvPigfNjfdV3fP/yZ+BNCVZgNyp/l98epfzraebh+bi46LAX2AALRcjBrK9b1H44331kMjpscvq+r+6f/yWPzwPZ7d/0Ml2ABjFIMmRszvviGbGDHey3AxoGkEoP180MSIueFe/6O9vb4U3N39v/Ge+vuPxeH07gI7tgQb4Jxm5+I5p7vfOs/tn4/cGdA4PoH26+6Gf/+x+NEv1yNTvTsICEGjw5qZiR++x0/0/OBjIBzegCnjQ8szmTktzcVff2X2ExvNcslBQMMIQBK6VwI+eJf/7H1+eLgXby2PUTKaL/UbH632zKrBH6H2uW4DnDXbris//aAfGzXGtPlmaWNU1Tplo3n7OW6xjPwktFkEIAkxylktVbryI9XCkobyNW9AVWt8g7nurvqT9/nJEQV2/48uBOVOmTNv3VFuu7a0zjjX5r8xZ1Utx8tfkU2NmZorAY0iAKkIQaOFZpd05Y1VMCZbyxFT1ZqaMnfc7z/4Bb9pg6nbO8tWS4iyRpNj5i+/4i+/rrS2zQ3oHgRsmDSv/GnDQUCzCEBCfNDYkP56l798x4HdzNqv8h8RpbLS5KS5c7ffdl1ZeRlx8ue4xCjvdfKUuW23v2xHy48DfNDoqM59oS1rjgCaRADS4oNOnjS37faX7ihdZiZGV7MBIUpRUxvNHbv8JTvKzJkia/Pp7LVQ1Qc+oHY3wFl1FuIFm7NT15uyogGNIQDJqWqdPGH+5iF/4fs7d38zTKwzPjzbSwIxqvIazhWjrvlk9bbrK2vX9ixTiyXSAEljQ0rw8eB9hQCkqPI6adz8/TfjRR8oP/0PfnzUrBsx4YQyEKNqr9xpctzsX9bbb6jee2sdpaK9Y6sHWt8AY9SptH692Xamm1vmhoDG8BefqNpralR5Zi79s/LC/975/Nf8yIhZN2KsUR3kg+LRz93HeGDux6gi08Q6s29Bv397ddZ/6Xz24XDqSUaR3bpnq/UNkGStfFDdB88qT5bZeMpzm94GNMYYGWl2WVbx1afZf/fL2eaftBvWGfnYKSWjTq1DH94Ypdwps5JUjJpyKe6ZiTvv8x++x3//8bhu2BRZC+dUg/JMe2bixZvdzu1F8NG36B3rIWh4RH/7cLj0zyuOAJpCACBnFaWZRQ1nOnWDeePp9tzT7M8/z9aVNm0wslKUjBQlq858nF6KZW3+are/9xvhvm+H/YtxtDDDhVp/F2sj2tqA7r0pZa3N/7Wzb145DwpsAgHAAc4qRFW1phfj+jEzOWpyF7ed6YonbuINUcWQ+cq3w33fDsOF/t/jscjMSKHcKUS+vWuolQ2IUZnT/gWd9b7O7KJ4UmwjCACewhhlVpVXHaSo2eUYo4w5cBAQo4ZzM1IceL5QjL14qgTUxgZ0AzCzqDP/W2eGADSE9zLgKbo/6JSUO0naNHH49bkYFYJkV/8mMhzDodeEd24vpDY0AI1jBeHpHfypz2H/OPYPhLB2UvhdEHqMAAADo30N4EFAzSIAwCBpVQOMOjW3jDSJAAADph0N8EHFsNl5X/3Dfc28rRoiAMAgakEDomScMiueFt4gAgAMpIFuQIzKnebm4v3fDaOF4SxQUwgAMKgGugHOypd64HtxmPM/zSEAwAA7tAHGqVj7l32uihCV5eYr/xQ6JXczNIm/e2CwHWzAr11XzZUaGxqABsQok+mLX/ePz0fuAW4QAQAGXlVr4zrzua+G03+v87mvhnXrTFU3vU1H132K+Nxs/MzDYWrU9H+uWowAAG3QfeHzfKlt15V37vaTk/3bgBCVD5nd/xx+sC/mGbv/TSIAQEv4oJFcmTOX7OjrBhgpRn3wrrpTcSdwwwgA0B4+KHN93QDvNT5u7v2a/9uvhakxzv80jAAArRL6uAFRMlYzi/GPP9c325Q2AgC0Td82oK41PmV2fL6+4yF2//sCAQBaqA8bUHuNj5t7HvIfuMtvmmp+eyACALTV4Q2YanKPu/sKudrr9z9Tzy1Fbv7qE3wOQGsd2oDP/qMfaugesRgVpWWvy68tv/SNsH7ceF4n1x8IANBmISh3MsZceWO1uHRgN7yXotSpNL7BXHtX/RcP+o3rDC8T7R8EAGg5HzSca3ZJ77yxkjUTY71rQIxS1IZN5rP3+Q99wW9abyqmfz8hAED7de8T/vT/9he+v3P3N8PEuClrrfUduLWXc5J0za3V2z9cdeoDt4Chf5iNpzy36W0A0AuZ0/Sichtv2V6cf6ab3x9jlFubncCq1uS4Kb0uvbb8ywf9pvXGiLc/9h2OAIBU1F5To3LOvO366ppbK2u0bsxUq30o4INi1OQG86VH/IXv73z6If+vfswoMv37EUcAQFqsUZQenYlbX2J/543ZuS9xy3OxrOWszLN7Mo8PMtL4mFlcih+4q/7Q5/3Msjb08JIDVooAACkqMj02p4kR/fvzsn/zC+7HTzJVJ5a1fJCzktFxtiBKIShKhdNwYbz0d1/3f3JnfcfDYdOksWYAXk6QMgIAJMpZ+aD9C/Enfsy8/Rx32SvcyZOmGDHlYoxSp1aMckbG6ikniYwU5eOB9/o6q6FccmbfXNz9z+FDn6+/+PUQZabGxL2+/Y8AAOkyknNaLrVYxvWj5hXPt2f/rH3Tz7mxIZ00ZeSkMnZKGfPUBBgVw0ZWS/NxodLu74Uvfj38zcPhh/vicq3JURmx4z8YCACQOmNkjSqvpVJlHU9db0ZybTvL+aCznmdf9gJbdp58cL8xKmt9/P46WvMP3wn3fzd0Ku2bj1OjJs/EOZ/BQgAAHOCszBMnf+aWYx20YcxMjZkQ4oHrw1EyCkE/nI7ea7gww7mcVe5UB37jP3gIAICnMJKMnJExqrxq/5RfB0XJSEOZZBSiYljzG8qwdrKmNwBAf4mSouon5np+5JCIqjnP0woEAMCxcGKnxbgTGAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFH/H+w/8L0L75WgAAAAAElFTkSuQmCC" alt="" width="30" height="30">KavoPDF</span>
+    <button class="nav-toggle" aria-label="Close menu" data-close-menu>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href="#home" data-nav="home">Home</a>
+    <a href="#features" data-nav="features">Features</a>
+    <a href="#download" data-nav="download">Download</a>
+    <a href="#faq" data-nav="faq">FAQ</a>
+    <a href="#privacy" data-nav="privacy">Privacy</a>
+    <a href="#contact" data-nav="contact">Contact</a>
+  </nav>
+  <a class="btn btn-primary" href="#download" data-nav="download">Download the APK</a>
+  <div class="mobile-menu-foot">
+    <p>Free Android app · 26 PDF tools · works offline</p>
+    <a href="https://github.com/kavopdf/app/issues">github.com/kavopdf/app</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============ HOME ============ -->
+<section class="view is-active" id="home" data-title="KavoPDF — serious PDF editing, offline and fast">
+
+  <div class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow" data-reveal>Free · Android · 26 tools · Offline</span>
+        <h1 data-reveal style="margin-top: var(--s-5)">Serious PDF editing, <em>offline and fast</em>.</h1>
+        <p class="lede" data-reveal>KavoPDF puts 26 document tools in one Android app — read, annotate, create, merge, split, compress, sign, redact and OCR. No account, no upload, no desktop detour.</p>
+        <div class="hero-cta" data-reveal>
+          <a class="btn btn-primary btn-lg" href="#download" data-nav="download">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M5 20h14"/></svg>
+            Download the latest APK
+          </a>
+          <a class="btn btn-ghost btn-lg" href="#features" data-nav="features">See all 26 tools</a>
+        </div>
+        <div class="hero-meta" data-reveal>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No account needed</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Nothing leaves your phone</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Works in aeroplane mode</span>
+        </div>
+      </div>
+      <div class="hero-visual" data-reveal>
+        <div class="phone" role="img" aria-label="The KavoPDF tools screen, listing all 26 tools">
+          <div class="phone-screen scrollable">
+            <div class="screen is-on">
+              <div class="app-head"><div class="app-titles"><span class="app-title">KavoPDF</span><span class="app-sub">Serious PDF editing, offline and fast</span></div><svg class="app-theme" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9.5" cy="9.5" r="1.1"/><circle cx="14.5" cy="9.5" r="1.1"/><circle cx="12" cy="14.5" r="1.1"/></svg></div><div class="app-scroll"><div class="app-track"><div class="app-cat">CREATE</div><div class="app-grid"><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span><b>Create PDF</b><i>Build a PDF from scratch — text, images, drawing …</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M4.5 17l4.5-4.5 3.5 3.5 3-2.5 4 3.5"/></svg></span><b>Images to PDF</b><i>Turn photos and scans into a PDF</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6.5" height="6.5" rx="1"/><rect x="14.5" y="3" width="6.5" height="6.5" rx="1"/><rect x="3" y="14.5" width="6.5" height="6.5" rx="1"/><path d="M14.5 14.5h3v3h-3z"/><path d="M20.5 14.5v3M14.5 20.5h6"/></svg></span><b>QR &amp; barcode scanner</b><i>Read any code with the camera</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M8.5 11h7M8.5 14.5h4"/></svg></span><b>Scan to PDF</b><i>Photograph pages into one PDF</i></div></div><div class="app-cat">EDIT</div><div class="app-grid"><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></svg></span><b>Read PDF</b><i>Open and read any PDF with smooth zoom</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span><b>Annotate &amp; sign</b><i>Highlight, draw, add text, sign, insert images</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7.5 12l2.5 2.5 5-5"/></svg></span><b>Fill forms</b><i>Fill interactive PDF form fields</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></span><b>Crop page</b><i>Trim a page's margins and save it in place</i></div></div><div class="app-cat">ORGANIZE</div><div class="app-grid"><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><b>Organize pages</b><i>Long-press a page and drag to reorder, rotate or …</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a4 4 0 0 0 5.7 0l3-3A4 4 0 0 0 13 4.3l-1.5 1.5"/><path d="M14 11a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 19.7l1.5-1.5"/></svg></span><b>Hyperlinks</b><i>Find web and e-mail addresses in a PDF and …</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V7M7 12l5-5 5 5"/><path d="M5 20h14"/></svg></span><b>Merge PDFs</b><i>Combine several PDFs into one</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v16M16 4v16"/><path d="M4 8h8M12 16h8"/></svg></span><b>Split PDF</b><i>Break a PDF into page ranges</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></span><b>Bookmarks</b><i>Add a navigation outline to a PDF</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3L8 21M16 3l-2 18"/></svg></span><b>Page numbers</b><i>Add numbering to every page</i></div></div><div class="app-cat">SECURITY &amp; OUTPUT</div><div class="app-grid"><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18c3 0 4.5-3 5.5-6S10.5 5 12 5s1.5 2.5 1 5-1 4 1 4 3-2 4-4"/><path d="M3 21h18"/></svg></span><b>Digital signature</b><i>Cryptographically sign a PDF so it can be verified</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z"/><path d="M9.5 12l1.8 1.8 3.4-3.6"/></svg></span><b>Verify signature</b><i>Check whether a PDF is signed and unmodified</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><b>Protect</b><i>Add a password and permissions</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 7.5-2"/></svg></span><b>Unlock</b><i>Remove a known password</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 9h8M8 13h5"/></svg></span><b>Watermark</b><i>Stamp text over every page — centre or rando…</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"/><path d="M10.6 6.3A9.8 9.8 0 0 1 12 6.2c6 0 9.5 5.8 9.5 5.8a17 17 0 0 1-2.7 3.2M6.6 7.7A17 17 0 0 0 2.5 12s3.5 5.8 9.5 5.8a9.7 9.7 0 0 0 3.3-.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></span><b>Redact</b><i>Permanently remove private text before shari…</i></div></div><div class="app-cat">OUTPUT &amp; TOOLS</div><div class="app-grid"><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H4v5M15 3h5v5M15 21h5v-5M9 21H4v-5"/><path d="M12 8v8M8 12h8"/></svg></span><b>Compress</b><i>Shrink file size by re-encoding images</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg></span><b>Edit metadata</b><i>Set title, author, subject and keywords</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="2.4"/><circle cx="6" cy="17" r="2.4"/><path d="M8.2 8.3L20 16M8.2 15.7L20 8"/></svg></span><b>Extract images</b><i>Pull embedded images out of a PDF</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M8 12h8"/></svg></span><b>Make searchable (OCR)</b><i>Add invisible text to a scanned PDF so it can be…</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M6.5 14l3-3 2.5 2.5L14 11l3.5 3.5"/></svg></span><b>Image to searchable PDF</b><i>Read the text in photos or screenshots and save …</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11M3 12h11M3 18h7"/><path d="M17 5v14l4-2.5"/></svg></span><b>Activity log</b><i>See what the app has done, and export it</i></div></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Everything in one app</span>
+        <h2 style="margin-top: var(--s-4)">Five groups of tools. One PDF app.</h2>
+        <p class="lede" style="margin-top: var(--s-4)">Every screen in KavoPDF belongs to one of these five jobs. Twenty-six tools in total, all working on the file you already have.</p>
+      </div>
+      <div class="bento">
+        <article class="card" data-reveal>
+          <div class="cat-count">04</div>
+          <h3>Create</h3>
+          <p>Build a PDF from a blank page, or turn a set of photos and scans into one tidy document.</p>
+          <p class="cat-tools">Create PDF · Images to PDF · QR &amp; barcode scanner · Scan to PDF</p>
+          <a class="card-link" href="#features" data-nav="features">See the tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+        <article class="card" data-reveal>
+          <div class="cat-count">04</div>
+          <h3>Edit</h3>
+          <p>Read, annotate, sign, fill in interactive forms and crop the margins off a page.</p>
+          <p class="cat-tools">Read PDF · Annotate &amp; sign · Fill forms · Crop page</p>
+          <a class="card-link" href="#features" data-nav="features">See the tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+        <article class="card" data-reveal>
+          <div class="cat-count">06</div>
+          <h3>Organize</h3>
+          <p>Reorder pages, merge, split, add bookmarks and page numbers, and follow every hyperlink.</p>
+          <p class="cat-tools">Organize pages · Hyperlinks · Merge · Split · Bookmarks · Page numbers</p>
+          <a class="card-link" href="#features" data-nav="features">See the tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+        <article class="card" data-reveal>
+          <div class="cat-count">06</div>
+          <h3>Security &amp; output</h3>
+          <p>Sign digitally, verify a signature, lock or unlock a file, watermark it, and redact what must go.</p>
+          <p class="cat-tools">Digital signature · Verify · Protect · Unlock · Watermark · Redact</p>
+          <a class="card-link" href="#features" data-nav="features">See the tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+        <article class="card" data-reveal>
+          <div class="cat-count">06</div>
+          <h3>Output &amp; tools</h3>
+          <p>Compress, edit metadata, extract images, run OCR, and keep an activity log of everything done.</p>
+          <p class="cat-tools">Compress · Metadata · Extract images · OCR · Searchable PDF · Activity log</p>
+          <a class="card-link" href="#features" data-nav="features">See the tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+      </div>
+
+      <a class="all-tools" href="#features" data-nav="features" data-reveal>
+        <span class="at-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>
+        <div>
+          <h3>All 26, in one place</h3>
+          <p>Every tool with what it actually does, grouped the same way the app groups them.</p>
+        </div>
+        <span class="go">Open the full list
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Three taps</span>
+        <h2 style="margin-top: var(--s-4)">From download to your first edited page.</h2>
+      </div>
+      <div class="steps">
+        <div class="step" data-reveal>
+          <div class="step-num">01</div>
+          <div><h3>Download the APK</h3><p>The download page always points at the newest build published on GitHub — you never have to chase a version number.</p></div>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step-num">02</div>
+          <div><h3>Allow the install once</h3><p>Android asks you to permit installs from this source. Flip it on for the file, install, and flip it back off.</p></div>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step-num">03</div>
+          <div><h3>Open any PDF</h3><p>Tap a PDF from Files, WhatsApp or Gmail and choose KavoPDF. Everything after that runs on your phone, offline.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="container">
+      <div class="mode-panel" data-reveal>
+        <div class="mode-copy">
+          <span class="eyebrow">One app, three moods</span>
+          <h2>Read it. Mark it. Build it.</h2>
+          <div class="mode-list" role="tablist" aria-label="App modes">
+            <button class="mode-item" role="tab" aria-selected="true" data-mode="read"><b>Read</b><span>Night mode, bookmarks and a reading view that keeps your place across files.</span></button>
+            <button class="mode-item" role="tab" aria-selected="false" data-mode="edit"><b>Edit</b><span>Highlight, draw, add text, sign and drop images straight onto the page.</span></button>
+            <button class="mode-item" role="tab" aria-selected="false" data-mode="create"><b>Create</b><span>Scan paper, build a PDF from photos, or start from a blank page.</span></button>
+          </div>
+          <a class="mode-link" href="#features" data-nav="features">See all 26 tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="mode-visual">
+          <div class="phone" role="img" aria-label="KavoPDF reading, editing and scanning a PDF">
+            <div class="phone-screen">
+              <div class="screen is-on" data-screen="read">
+                <div class="scr-top"><span class="scr-dot"></span><span class="scr-name">Rent-Agreement.pdf</span><span class="scr-sub">p. 4 / 12</span></div>
+                <div class="page"><div class="line h w70"></div><div class="line w92"></div><div class="line w86"></div><div class="hl"></div><div class="line w92"></div><div class="line w78"></div><div class="line w88"></div><div class="line w60"></div><div class="line h w45"></div><div class="line w90"></div><div class="line w84"></div><div class="line w92"></div><div class="line w52"></div><div class="line w88"></div><div class="line w76"></div><div class="line w92"></div><div class="line w64"></div><div class="line w86"></div><div class="line w40"></div><div class="line w92"></div><div class="line w80"></div><div class="line w88"></div><div class="line w70"></div><div class="line w92"></div><div class="line w56"></div><div class="line w88"></div><div class="line w92"></div><div class="line w74"></div><div class="line w90"></div><div class="line w62"></div><div class="line w88"></div><div class="line w46"></div></div>
+                <div class="scr-tools"><span class="on-wrap"><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></svg></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="5" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="12" cy="19" r="1.4"/></svg></div>
+              </div>
+              <div class="screen" data-screen="edit">
+                <div class="scr-top"><span class="scr-dot"></span><span class="scr-name">Invoice-2211.pdf</span><span class="scr-sub">Edited</span></div>
+                <div class="page"><div class="line h w58"></div><div class="line w92"></div><div class="line w80"></div><div class="line w70"></div><div class="hl" style="width:62%"></div><div class="line w92"></div><div class="line w45"></div><div class="textbox"><span></span><span></span><span></span></div><svg class="ink-stroke" viewBox="0 0 200 240" preserveAspectRatio="none"><path d="M20 200 C60 176, 84 214, 118 186 S168 196, 182 172"/></svg><div class="line w88"></div><div class="line w76"></div><div class="line w92"></div></div>
+                <div class="scr-tools"><span class="on-wrap"><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></svg></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="5" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="12" cy="19" r="1.4"/></svg></div>
+              </div>
+              <div class="screen" data-screen="create">
+                <div class="scr-top"><span class="scr-dot"></span><span class="scr-name">New scan</span><span class="scr-sub">Auto edge</span></div>
+                <div class="viewfinder">
+                  <div class="doc-outline"><div class="doc-inner"><div class="line h w60"></div><div class="line w92"></div><div class="line w80"></div><div class="line w70"></div><div class="line w92"></div></div></div>
+                  <div class="shutter"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Straight answers</span>
+        <h2 style="margin-top: var(--s-4)">The questions people ask before installing.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">Why is KavoPDF an APK and not on the Play Store?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="faq-a"><div><p>It's distributed directly so the app stays free and free of the Play Store's listing costs. You install the file yourself — Android asks for permission once, then you're done. It's the same app either way.</p></div></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">Will I always get the newest version?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="faq-a"><div><p>Yes. The download page reads the latest release straight from GitHub, so the button always hands you the newest build — the version and file size shown are the real ones, not a hard-coded number.</p></div></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">Is my data uploaded anywhere?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="faq-a"><div><p>No. Every edit, merge, redaction and scan runs on your device. Your PDFs never leave your phone, which is also why the app keeps working in aeroplane mode.</p></div></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">Does it work without internet?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="faq-a"><div><p>Yes — the whole app works offline. The only time you need a connection is the one download that installs it.</p></div></div>
+        </div>
+      </div>
+      <div style="margin-top: var(--s-6)" data-reveal>
+        <a class="btn btn-ghost" href="#faq" data-nav="faq">Read all questions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <div data-reveal>
+        <h2>Twenty-six tools. Zero accounts.</h2>
+        <p>Download the APK, install it once, and your PDFs finally behave on the phone you already carry.</p>
+      </div>
+      <div class="btn-row" data-reveal>
+        <a class="btn btn-primary btn-lg" href="#download" data-nav="download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M5 20h14"/></svg>
+          Download the APK
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="view" id="features" data-title="Features — KavoPDF">
+  <section>
+    <div class="container">
+      <div class="prose" data-reveal>
+        <span class="eyebrow">Features</span>
+        <h1 style="font-size: var(--text-3xl); margin-top: var(--s-4)">All 26 tools, and what each one actually does.</h1>
+        <p class="lede" style="margin-top: var(--s-5)">KavoPDF is built around one idea: the file you opened is the file you finish. No export round trips, no "upgrade to edit", no queue behind a server. Here's the whole toolbox, grouped exactly the way the app groups it.</p>
+      </div>
+
+      <div class="chips" data-reveal style="margin-top: var(--s-7)">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Create</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Edit</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Organize</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Security &amp; output</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Output &amp; tools</span>
+      </div>
+
+      <div class="showcase" data-reveal>
+        <div class="phone" role="img" aria-label="The KavoPDF tools screen, listing all 26 tools">
+          <div class="phone-screen scrollable">
+            <div class="screen is-on">
+              <div class="app-head"><div class="app-titles"><span class="app-title">KavoPDF</span><span class="app-sub">Serious PDF editing, offline and fast</span></div><svg class="app-theme" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9.5" cy="9.5" r="1.1"/><circle cx="14.5" cy="9.5" r="1.1"/><circle cx="12" cy="14.5" r="1.1"/></svg></div><div class="app-scroll"><div class="app-track"><div class="app-cat">CREATE</div><div class="app-grid"><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span><b>Create PDF</b><i>Build a PDF from scratch — text, images, drawing …</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M4.5 17l4.5-4.5 3.5 3.5 3-2.5 4 3.5"/></svg></span><b>Images to PDF</b><i>Turn photos and scans into a PDF</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6.5" height="6.5" rx="1"/><rect x="14.5" y="3" width="6.5" height="6.5" rx="1"/><rect x="3" y="14.5" width="6.5" height="6.5" rx="1"/><path d="M14.5 14.5h3v3h-3z"/><path d="M20.5 14.5v3M14.5 20.5h6"/></svg></span><b>QR &amp; barcode scanner</b><i>Read any code with the camera</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M8.5 11h7M8.5 14.5h4"/></svg></span><b>Scan to PDF</b><i>Photograph pages into one PDF</i></div></div><div class="app-cat">EDIT</div><div class="app-grid"><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></svg></span><b>Read PDF</b><i>Open and read any PDF with smooth zoom</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span><b>Annotate &amp; sign</b><i>Highlight, draw, add text, sign, insert images</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7.5 12l2.5 2.5 5-5"/></svg></span><b>Fill forms</b><i>Fill interactive PDF form fields</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></span><b>Crop page</b><i>Trim a page's margins and save it in place</i></div></div><div class="app-cat">ORGANIZE</div><div class="app-grid"><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><b>Organize pages</b><i>Long-press a page and drag to reorder, rotate or …</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a4 4 0 0 0 5.7 0l3-3A4 4 0 0 0 13 4.3l-1.5 1.5"/><path d="M14 11a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 19.7l1.5-1.5"/></svg></span><b>Hyperlinks</b><i>Find web and e-mail addresses in a PDF and …</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V7M7 12l5-5 5 5"/><path d="M5 20h14"/></svg></span><b>Merge PDFs</b><i>Combine several PDFs into one</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v16M16 4v16"/><path d="M4 8h8M12 16h8"/></svg></span><b>Split PDF</b><i>Break a PDF into page ranges</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></span><b>Bookmarks</b><i>Add a navigation outline to a PDF</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3L8 21M16 3l-2 18"/></svg></span><b>Page numbers</b><i>Add numbering to every page</i></div></div><div class="app-cat">SECURITY &amp; OUTPUT</div><div class="app-grid"><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18c3 0 4.5-3 5.5-6S10.5 5 12 5s1.5 2.5 1 5-1 4 1 4 3-2 4-4"/><path d="M3 21h18"/></svg></span><b>Digital signature</b><i>Cryptographically sign a PDF so it can be verified</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z"/><path d="M9.5 12l1.8 1.8 3.4-3.6"/></svg></span><b>Verify signature</b><i>Check whether a PDF is signed and unmodified</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><b>Protect</b><i>Add a password and permissions</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 7.5-2"/></svg></span><b>Unlock</b><i>Remove a known password</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 9h8M8 13h5"/></svg></span><b>Watermark</b><i>Stamp text over every page — centre or rando…</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"/><path d="M10.6 6.3A9.8 9.8 0 0 1 12 6.2c6 0 9.5 5.8 9.5 5.8a17 17 0 0 1-2.7 3.2M6.6 7.7A17 17 0 0 0 2.5 12s3.5 5.8 9.5 5.8a9.7 9.7 0 0 0 3.3-.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></span><b>Redact</b><i>Permanently remove private text before shari…</i></div></div><div class="app-cat">OUTPUT &amp; TOOLS</div><div class="app-grid"><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H4v5M15 3h5v5M15 21h5v-5M9 21H4v-5"/><path d="M12 8v8M8 12h8"/></svg></span><b>Compress</b><i>Shrink file size by re-encoding images</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg></span><b>Edit metadata</b><i>Set title, author, subject and keywords</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="2.4"/><circle cx="6" cy="17" r="2.4"/><path d="M8.2 8.3L20 16M8.2 15.7L20 8"/></svg></span><b>Extract images</b><i>Pull embedded images out of a PDF</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M8 12h8"/></svg></span><b>Make searchable (OCR)</b><i>Add invisible text to a scanned PDF so it can be…</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M6.5 14l3-3 2.5 2.5L14 11l3.5 3.5"/></svg></span><b>Image to searchable PDF</b><i>Read the text in photos or screenshots and save …</i></div><div class="app-card"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11M3 12h11M3 18h7"/><path d="M17 5v14l4-2.5"/></svg></span><b>Activity log</b><i>See what the app has done, and export it</i></div></div></div></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow">The tools screen</span>
+          <h2 style="margin-top: var(--s-4)">One screen, every tool, no digging.</h2>
+          <p>Every group sits where you'd expect it, and the tool you want is one tap from opening. Long-press a card and it tells you exactly what it will do before you commit to it.</p>
+          <p style="margin-top: var(--s-4)">The app opens dark, works with no network, and never asks you to make an account first.</p>
+        </div>
+      </div>
+
+      <div class="cat" data-reveal>
+        <div class="cat-head">
+          <span class="cat-num">01</span>
+          <h2>Create</h2>
+          <p>Start something new — a blank page, your photos, or the camera.</p>
+        </div>
+        <div class="feat-grid">
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/><path d="M13 3v6h6"/><path d="M12 14v6M9 17h6"/></svg></span>
+            <div><h3>Create PDF</h3><p>Build a PDF from scratch — write text, drop in images, sketch with your finger, and arrange the pages before you save.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="11" height="9" rx="1.5"/><path d="M5.5 10l2.5-2.5 2 2 1.5-1.5 1.5 2"/><path d="M17 10h4v9a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2"/></svg></span>
+            <div><h3>Images to PDF</h3><p>Pick a handful of photos or scans and turn them into a single, tidy PDF — order them, set the page size, done.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6.5" height="6.5" rx="1"/><rect x="14.5" y="3" width="6.5" height="6.5" rx="1"/><rect x="3" y="14.5" width="6.5" height="6.5" rx="1"/><path d="M14.5 14.5h3v3h-3z"/><path d="M20.5 14.5v3M14.5 20.5h6"/></svg></span>
+            <div><h3>QR &amp; barcode scanner</h3><p>Read any code with the camera — open a link, copy the text or save the details without leaving the app.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M8.5 11h7M8.5 14.5h4"/></svg></span>
+            <div><h3>Scan to PDF</h3><p>Photograph pages straight into one PDF — KavoPDF finds the edges, straightens each sheet and stitches them together.</p></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="cat" data-reveal>
+        <div class="cat-head">
+          <span class="cat-num">02</span>
+          <h2>Edit</h2>
+          <p>Change the document itself — mark it up, sign it, fill it in, tidy its edges.</p>
+        </div>
+        <div class="feat-grid">
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></svg></span>
+            <div><h3>Read PDF</h3><p>Open and read any PDF with smooth zoom, night mode, and a reading view that remembers where you stopped.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+            <div><h3>Annotate &amp; sign</h3><p>Highlight, draw freehand, add text, drop in an image and sign — the markup saves straight into the file.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h10M7 17h4"/></svg></span>
+            <div><h3>Fill forms</h3><p>Complete interactive PDF form fields — text boxes, checkboxes and dropdowns — then save the finished form.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></span>
+            <div><h3>Crop page</h3><p>Trim a page's margins — handy for scans with too much white space — and save the change in place.</p></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="cat" data-reveal>
+        <div class="cat-head">
+          <span class="cat-num">03</span>
+          <h2>Organize</h2>
+          <p>Move the pieces around: pages, files, links and structure.</p>
+        </div>
+        <div class="feat-grid">
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+            <div><h3>Organize pages</h3><p>Long-press a page and drag to reorder it, rotate it, duplicate it or delete it from the document.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a4 4 0 0 0 5.7 0l3-3A4 4 0 0 0 13 4.3l-1.5 1.5"/><path d="M14 11a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 19.7l1.5-1.5"/></svg></span>
+            <div><h3>Hyperlinks</h3><p>Find every web and e-mail address inside a PDF, and jump straight to it from the page.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg></span>
+            <div><h3>Merge PDFs</h3><p>Combine several PDFs into one document, in whatever order you choose, without leaving the app.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v16M16 4v16"/><path d="M4 8h8M12 16h8"/></svg></span>
+            <div><h3>Split PDF</h3><p>Break one PDF into page ranges and export each part as its own file.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></span>
+            <div><h3>Bookmarks</h3><p>Add a navigation outline to a PDF so long documents stay easy to move around in.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3L8 21M16 3l-2 18"/></svg></span>
+            <div><h3>Page numbers</h3><p>Number every page automatically, placed wherever you want them on the sheet.</p></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="cat" data-reveal>
+        <div class="cat-head">
+          <span class="cat-num">04</span>
+          <h2>Security &amp; output</h2>
+          <p>Prove who sent it, control who can open it, and remove what must not travel.</p>
+        </div>
+        <div class="feat-grid">
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z"/><path d="M9.5 12l1.8 1.8 3.4-3.6"/></svg></span>
+            <div><h3>Digital signature</h3><p>Cryptographically sign a PDF so anyone who opens it can confirm it came from you, and that it hasn't changed since.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M8.5 11l1.8 1.8 3.4-3.6"/></svg></span>
+            <div><h3>Verify signature</h3><p>Check whether a PDF is signed, and whether it has been modified since it was.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+            <div><h3>Protect</h3><p>Add a password and set what the reader is allowed to do — print, copy or edit.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 7.5-2"/></svg></span>
+            <div><h3>Unlock</h3><p>Remove a known password from a PDF you own, so you can edit and share it freely.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 14.5h5"/></svg></span>
+            <div><h3>Watermark</h3><p>Stamp text across every page — centred, tiled or placed at random — with the size and opacity you choose.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h6M7 14h10"/></svg></span>
+            <div><h3>Redact</h3><p>Permanently remove private text from a document before you share it — the content goes, not just a black box on top.</p></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="cat" data-reveal>
+        <div class="cat-head">
+          <span class="cat-num">05</span>
+          <h2>Output &amp; tools</h2>
+          <p>Get the file smaller, tidier and more useful when it leaves the app.</p>
+        </div>
+        <div class="feat-grid">
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H4v5M15 3h5v5M15 21h5v-5M9 21H4v-5"/><path d="M12 8v8M8 12h8"/></svg></span>
+            <div><h3>Compress</h3><p>Shrink file size by re-encoding the images, without wrecking the text — ideal before an e-mail attachment.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h10"/><path d="M17 15l3 3-3 3"/></svg></span>
+            <div><h3>Edit metadata</h3><p>Set the title, author, subject and keywords stored inside the file, so it looks right in any reader.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M6 12l3-3 2.5 2.5L14 9l4 4"/><path d="M12 20v2M8 22h8"/></svg></span>
+            <div><h3>Extract images</h3><p>Pull every embedded image out of a PDF and save the ones you want as separate files.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M8 12h8"/></svg></span>
+            <div><h3>Make searchable (OCR)</h3><p>Add an invisible text layer to a scanned PDF so its words can be searched, selected and copied.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="11" rx="2"/><path d="M6.5 10l2.5-2.5 2 2 1.5-1.5 1.5 2"/><path d="M17 13h4v7a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-3"/></svg></span>
+            <div><h3>Image to searchable PDF</h3><p>Read the text inside photos or screenshots and save the result as a searchable PDF.</p></div>
+          </article>
+          <article class="feat">
+            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11M3 12h11M3 18h7"/><path d="M17 5v14l4-2.5"/></svg></span>
+            <div><h3>Activity log</h3><p>See everything the app has done to your files, and export the log when you need a record.</p></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="container">
+      <div class="prose" data-reveal>
+        <h2>What it deliberately doesn't do</h2>
+        <p>No account wall. No forced cloud upload. No "watermark removed in Pro". No 30-second export queue. The app is small, it works offline, and it stops where your file stops.</p>
+        <h3>Built for</h3>
+        <ul>
+          <li>Students marking up lecture notes and past papers</li>
+          <li>Anyone filling, signing and returning a form on the go</li>
+          <li>Small businesses merging invoices and receipts into one statement</li>
+          <li>Anyone who has to redact a name or a number before hitting send</li>
+        </ul>
+      </div>
+      <div style="margin-top: var(--s-7)" data-reveal>
+        <a class="btn btn-primary" href="#download" data-nav="download">Download the latest APK</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD ============ -->
+<section class="view" id="download" data-title="Download — KavoPDF">
+  <section>
+    <div class="container">
+      <div class="prose" data-reveal>
+        <span class="eyebrow">Download</span>
+        <h1 style="font-size: var(--text-3xl); margin-top: var(--s-4)">Get the latest KavoPDF, straight from GitHub.</h1>
+        <p class="lede" style="margin-top: var(--s-5)">This page always points at the newest build on GitHub, so the button never hands you an old file. No account, no Play Store, no waiting.</p>
+      </div>
+
+      <div class="dl-card" style="margin-top: var(--s-7)" data-reveal>
+        <div class="dl-head">
+          <img class="app-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAAk20lEQVR4nO3da7BlZX3n8d/zPGutc+1zTjfphjBaScVoDI5Cuo2CBiJeEhqVi2WMNJAM3ghNzZhJJjXJ6NRM1UhSScXRmKFJahBUWhBzQYyCYqIEHC4m3QPlqHhNnLE0TUP3uZ+z11rP88yL3TRNN930ac7Za+/1fD+lb7z1svez/9912Wsts/GU5woAkB7b9AYAAJpBAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABJFAAAgUQQAABKVNb0BAPqRMVKUtTLmaf5dHyQpxh5vFFYZAQDwJGPkrBTVqWWM5pe0XMVuDCTJKEYZo4lhI6PMKnfyQTGKFgwiAgBAxiizqr2qWo8vRyM99ySzXOpVL7Eve74tO9GaJ/+TZa2bH/CVN7NL8Yf749iwGc5VOMUnjgwwKMzGU57b9DYAaIwxckadWvsX4+SIOWXKvOXn7cSI3vryLHNxasQMjRsFqRuAKBkp6NF9MSv0wLfCP34//J//G+/9Zti3EJ01EyMyhgwMDAIApMtalbXmluJPbTJv2uJe9UL78ufbqTEjq3IpSqqDKq/DrwIYDWVS1FAuDZtyIf5wf/zUQ+HL3wx3PuSjMRPDilwhGAQEAEhR99LuwrJOmdLbznFXnJ39+EajKi6XKr0U5eyT/7EjxXjgeoAPypxyp2LY1FX8u6+Ha++qv/SNkDszlHMo0O8IAJAcZ9WptVzGi17qPnhZvmnSlMtxuZIxsvaI/f3j0C2BtRofNrK6/R/8v72p2r+o0aED/y76EwEA0uKsFjqaHNH/uDx/40ttVapTyR3l554r5YOs0eiQHlvUuz9WfWqXHxs2zipwKNCXCACQiu4O/qMz8c0vdddekZ80qsXOgX99dfmgIlOe6zO7w6//zzLKjHA6qC9xJzCQBGsUomYW4q+8zH3kN/KJIc0vy5jVn/6SnFXttbCkC17uPn5lMV5ooXPgogL6CkcAQPsZoxDlfbzxncUbt7jl5RiC7NpPZB80NqT9y7rqhur23f6kdab2a/6H4vgRZaD9rNHCcvzoO4sLz3QLCzHGXkx/PXG9YV2hm7YX5/6snV6ImevFn4vjRACAlsszPTobL9rsXr/Fzc3Eoz3eZ404q+VSmdN7Lsgyp+VKtod/Oo6NAABtlmfaMxPftMV9+F358nK0a3PS/9gyp8WFePZp7tbtRe54alAfIQBAa3Wn/8Wb3c7thYJCaGD6dzmn6dm49Sz37te5R6djwUPI+gMBANrp0OkffPS+R+f9j7o9TvP74tW/nG093T42Fx0XA/oAAQBaqN+mvyRjFIMmRszvviGbGDHeN3Y4goOaXhQAVlsfTv8u5zQ7F8853f3WeW7/fOTOgMbxCQCt0rfTvytzWpqLv/7K7Cc2muWSg4CG9dPSAPDs9Pn0l2SMqlqnbDRvP8ctlpGfhDarz1YHgBNijJzTnum+nv5dzqpajpe/IpsaMzVXAhrVlwsEwEocfM7Pm1/mbrqqCKF/p7+eOAjYMGle+dOGg4Bm9esaAXB8rFXlVfv4ie3FzVf39b7/QT5odFTnvtCWNUcATervZQLgmKxV7eVDvPmq4oKXu4XFGOMAPGvBWXUW4gWbs1PXm7KiAY0hAMCg6k7/2sdbthdbN7uZ6bha73XpjbEhjRQKPBqiOQQAGEiHT/+ZmA/O8xWMUafS+vVm25lubpkbAhrDXzwweAZ6+h9krXxQ7U/kLcRYFQQAGDAtmf5GdRnPep7dMG4q3hLTEAIADJJ2TH9Jxqgu9Yrn2/Xjqpt7TGniCAAwMFoz/buM0WIpHzgF1JhBXj5Ye+bAP58U+c1GQ1o2/busYfo3afBXEFabkYyVNVJUp1Y8JAExKnPKnWKUj8Sgd1o5/dE4FhGe5KyMVHotLWm5jM7p1CljrboRiFHWmumFuHcuZlbjw6ZwypzqQAnWFtMfa4R1BElyVjFqZlE+xA1j5tzT7UufZ02Il56VFdmB+R6iiiF95Vvh/u8GZ3XLg+FfpuPe+bh+1AxlHBCslXZP//6/abndzMZTntv0NqBJzipKs4syilvPcL/wM/aiM+yp600xahRULseDY91IMWqokAqjWtML8cFvh7sfCX+9y3/v0bhuxAzn8p5Xfq+mFk//GJVlemxWr7ymM7ekzLED0QACkLTMaWZRRvHVL7JXvy57zWk2y025HCuv7nN6nekO/if+C0YxyEdZo9xpuJBy86O98cZ76xvu8d9/LE6NGWe4uX91tHj6S6q91k2YP/pU9Z//qv6xCVNzK0ATWrSgsBLGyBo9Nhdfe5r9zfPz15zmnNH8UgxLB54nkx/6zu5DjtONPfDbYR81t6S4GE8a03+6KL/i7OwjX/Z/8vl6qdJoIR96+/+nddo9/dW9ruSUWdUslea0a03h+FjTHd/xTS91H72yGMo1vxCj5Kyse+b/epeRuo9wqbyW5+L6Uf3er2QveY658sZqdlljQzTgxLV/+kflTnNz8f7vhtHCcMjYFG4ES85hj4+v6zg7H63VCT+QyxhlTj5o9vG49SX24T8YOu/Fdu9c22ZWz7R++nc5K1/qge/F4Zyz/40hAGk58vHxisqOe6//GLoZWOhoXaGPXZVfvNntmYn5avwvJyWR6R+istx85Z9Cp+z3d9e0G3/3CTFGPsiHNXx8vLMqK0WvnduLizbbx+fjqtQlES6N6S8pRplMX/y6764QjgCaQgASYo0WluPH3lls3bKGw8Vaea/g48evHnrVC+30Ag04Ls5qqUpl+heZ5mbjZx4OU6OGa0UNIgCpyJwen48XbXav3+LmZtd2uFirqlbm9J4LsjxT5XnW4zNwVgsdjRe6+aqWT39JISofMrv/OfxgX8wzdv+bRACS4KxmF+NrT7M3XFksLcce3H6ZOS0sxLNPczvfVSyXkQAcQ55p71w878UHrp/Ptf36efeOwg/eVXcq7gRuGAFIRZR+Z2s2lMv3an88c5qbj2/Y4l59mp1d5LV/Ty/PtGcmXrzZfeyqfF2hhc6J/xxrIHiv8XFz79f8334tTI1x/qdhrV5rkCQ5q5nF+NoX2bNf5BZ6fkY+KL77tRk7ek/r4PTfub2IXmXV8ukfJWM1sxj/+HN109sCiQCkoHuK9d2vy4zp9YN6nNXSos751+41L7LTCxwEPMWh0z/46H37fxBZ1xqfMjs+X9/xELv/faHtKy553bP/rz/DnX2aW2riPEyUjNFv/lI2lPOMoCelOP29xsfNPQ/5D9zlN02ZimOAPtD2RZc8Y1QHnfMCkxXNzF9rVHXi5p+0z9lgqpqfA0lJTv8YNZSr9vr9z9RzS7H1/38HBZ9DmxmjqtaGcXPBz2XVUjNnYIxRWWvdhHnD6XaaS8GpTv8oLXtdfm35pW+E9ePG8+zP/tD2pZc2Y7RU6uwX2I3rm9z7Nkax1qtPc+vHDjxlOlkpTn+pU2l8g7n2rvovHvQb1/Hk5z7S9tWXNmu0WMYzf8qMjjX50F1rVJXx5c+ziV/3S3H6Rylqwybz2fv8h77gN603FdO/n7T6hhPowPPWo1ezu93GaLlSZtN9X1iC0z8Ede8Dv+bW6k+/4Du1hjJ+CNBf2r4GE2aMOpVO3WAue0VWLjd58r27JZtOMtvOdHMNXYpoVprT3znJmiuur977yTqK6d+P2r4Mk2eNhjL1w463MRpK8sEvyU5/68xlO8rbdvnnbDSKTP9+xCmg9uufL17/bEnPpD79d/uTJ02nanqbcBRtX4xAc5j+J09yw1dfa/t6BBrC9Gf697+2L0mgCUx/pv9AaPuqBHqO6c/0HxRtX5hAbyU4/WvP9B9UbV+bQA+lOf0nRuUycynTfwDxM1BgFRgja7VnOl68JbHpP27ufsT/4e31Fx8JJ08w/QcMAQCeLWvko+YW4ptf5j7yriKEJKZ/VWty0ty527/12rIK5qRxnvMzeAgA8KxYq6pWiPET24s3bHHLyzHEhKb/JTvKPDNjmXjG5yAiAMCJs1a1lw/xlu3F1i1ubjZao9a/APnQ6Z85kzmm/6Bq+44KsGa607/28ZbtxdbNbmY6Otv+tx0cOf1Dwo/4HnQEADgRh0//mZgncDjN9G8ZAgCsGNOf6d8OBABYGaY/0781CACwAkx/pn+bEADgeDH9mf4tQwCA48L0Z/q3DwEAnhnTn+nfSgQAeAZMf6Z/WxEA4FiY/kz/FiMAwFEx/Zn+7UYAgKfH9Gf6tx4BAJ4G05/pnwICAByO6c/0TwQBAJ6C6c/0TwcBAJ6U4PSPUlkx/RNFAIADUpz+UYqa2mju2MX0T1HbFzhwfDKnsk5r+oegPFPldc2t1Z9+wVvL9E9O29c4cBwyp+lF5TZ+4uqEpr9zkjVX/Hn5lw/4TetNwfRPD6eAkLrc6fH5+IsvMLf/drH1DDc7m8r0t85ctqO8bZd/zkajqBCb3iz0XNtXOnBMeaY9M/Gize7mq4vCxtn5mLmmt2mNPWX67/YnT5pO1fQ2oSEEAOnqTv+LN7ud2wtfx9laCU7/qm56m9AcTgEhUYdO/+Cj90x/JIcAIEVHTn/b9q8C0x9HavuqB47A9Gf6o6vtCx94KqY/0x8HtX3tA4dg+jP9cai2L3/gCUx/pj8O0/ZvACCJ6c/0x9Np+5cAYPoz/XEUbf8eIHlMf6Y/jqbtXwWkjenP9McxtP3bgIQx/Zn+OLa2fyGQKqY/0x/PqO3fCSSJ6c/0x/Fo+9cC6WH6M/1xnNr+zUBiEpz+tWf64wS1/cuBlKQ5/SdG5TJzKdMfK8cLYdAGRipy/Wg6vek/bu5+xP/h7fUXHwknTzD9sTIEAAPPGkXpB3vjm890O69KZfpXtSYnzZ27/VuvLatgTho3lW96mzBoCAAGm7UqaxVO73tL9u5fyhTSmv6X7CjzzIxlqpn+WDkCgAFmrWqvEOINVxbnn+kW9sc6semfOZM5pj9OUNu/K2iv7vSvfbxle3H+Fje9N8rImKY3a40dOf1DaHqbMLA4AsBAOnT6b93sZmZikTe9TWuP6Y/VxREABs+R0z9PYE+G6Y9VRwAwYJj+TH+sFgKAQcL0Z/pjFREADAymP9Mfq4sAYDAw/Zn+WHUEAAOA6c/0x1ogAOh3TH+mP9YIAUBfY/oz/bF2CAD6F9Of6Y81RQDQp5j+TH+sNQKAfsT0Z/qjBwgA+g7Tn+mP3iAA6C9Mf6Y/eoYAoI8w/Zn+6KUEvl4YEAlO/xgVoianzJ27mP5oAEcA6Avd11olNf1DlDEaGzWfftBvu650lumPXmv7lwyDIHOaXlRu4yeuTmb6B7lMxpht15af3u3Hho0zTH/0Wtu/Z+h7udNj8/HVL7T/8cL8VS90s7NpTH8na81lO8rbdvmNkyYEhdj0ZiE9bf+qob/lmfbMxIs2u5uvLgobZ+dj5prepjV2YPo7c9mO8rbd/uQpU9VNbxNSRQDQmO70v3iz27m98HWcrZXc9J9k+qNJXARGMw6d/sFH75n+QK8RADTgyOlv274Smf7oQ23/2qH/5I7pz/RHX2j7Nw99Jsu0Z0ZMf6AftP3Lh36SO9Nh+jP90Tfa/v1D/zDaOxdfs9l+7Oqc6Q/0A34Gil6wVtVyfP0Z9j+cn4npD/QHAoBesEZlqXN+xnYqlRXTH+gLBAA9YowWOjKSMU1vyhpj+mNQEAD0jm376BfTHwOl7YfiQA8x/TFYCACwOpj+GDgEAFgFTH8MIgIAPFtMfwwoAgA8K0x/DC4CAJw4H1TkMk5MfwwiAgCcIB80NqS5Ur92XcX0xyDiPgDgRFS1JifNHbv8u26oZpe1cR3TH4OHAAAr1p3+d+72264rZczYkHxoepuAlSMAwMocnP6X7CgzZ3LH9Meg4hoAsAKHTf+M6Y9BRgCA43Xk9A9MfwwyAgAcF6Y/2ocAAM+M6Y9WIgDAM2D6o60IAHAsTH+0GAEAjioETa5n+qO1CADw9EJUXugvvuwv+7PSWaY/WogAAE/PSEHm1gfqfQsa5V5ftBEBAI7Ox51XD/3Kz7sfTceCu+bROgQAeHrGyAcpxJuuKi7e7PbMxJwGoF0IAHBU1qiuFXzcuZ0GoIUIAHAs1sp7GoB2IgDAM6ABaCsCADwzGoBWIgDAcaEBaB8CABwvGoCWIQDACtAAtAkBAFbm8AZMR+dkTNObBawcAQBW7EADQrzpquLNL3MzCzFEWRqAQUMAgBNx8Djg5quLT2wvah8rL8v3CQOFBQucIGsUoxYW4wUvdzdfVfgQaxqAgcJqBU6cMXJWM9Nx62Z3y/ai9jQAg4SlCjxbeaaZGRqAwcM6BVYBDcAgYpECq4MGYOCwQoFVQwMwWFiewGqiARggrE30jjEKsemNWHs0AIOChYkeMVLtNVooJPB2dRqAgcCqRC/4oOEx7fg7f/MDfnzKVHXTG7T2aAD6H0sSvRCjjDWdKl5xXXXXrjA5SQOA5rEe0StRRW6i1bYd5Z27PQ0AGsdiRO+EEI1T5nQJDQD6ACsRPRWDMqfMGRoANI5liF4LkQbQAPQF1iAaEDgOoAHoAyxANOPIBpSVWn+XGA1AX2H1oTGHNuCOXX5qo1FUbHsEjmyA41uIhrD00KRuA6w1b7u+uubWKkqZa/+twoc1YKmiAWgG6w4NC0GFU5Te+8n6iusrWeNSasDNVxXjhRY6NAANYNGheSFKUc/ZaG7b5S/bUVqXSgPm5uJ5L7YP/8HQeS+2e+dinjW9TUgMAUBfiFKn0smT5rbdCTXAWS10tK7Qx67KL97s9szQAPQUAUAfqeoUG1BWil47txc0AD1GANBfEmyAtfJewUcagB4jAOg7NIAGoDcIAPoRDaAB6AECgD5FA2gA1hoBQP+iATQAa4oAoK/RABqAtUMA0O9oAA3AGiEAGAA0gAZgLRAADAYaQAOw6ggABgYNoAFYXQQAg4QG0ACsIgKAAUMDaABWCwHA4KEBNACrggBgINEAGoBnjwBgUB3ZgNo3vU1rjAZgdREADLCDDbh0R+kyMzFKA4AVIAAYbFWtkyfM3zzkL3x/5+5vhYlxk2ADhnKZprcKg4gAYOBVXieNm7//Vrzw/eWdD/mJCVPVTW/TGntKA7a4H+yNMrJEACtEANAGtdfUqPLMXLKjvHO3n5xMpQEK8cZ35O97S2ak0svyhcZKsF7QErVX5pS5tBpQexnpPb+a3/COPIRY0wCsBIsF7RFCcg0wRjKa3hvP3+Ju2V7UngZgBVgpaJUUGyAVuWZm4tbNNAArwzJB2yTYAEl5RgOwYqwRtBANoAE4HiwQtBMNoAF4RqwOtBYNoAE4NpYG2owG0AAcA+sCLUcDaACOhkWB9qMBNABPixWBJNAAGoAjsRyQChpAA3AY1gISQgNoAA7FQkBaaAANwEGsAiSHBtAAdLEEkCIaQAMgAoBkHdmAslJseqvWGg3Aofjwka5DG3DHLj+10Sgqtj0CNAAH8ckjad0GWGvedn11za1VlDKnEJrerDV2ZAMy1/Q2oQkEAKkLQYVTlN77yfqK6ytZ4xJrQFXH6UUakCICAChEKeo5G81tu/xlO0rrUmnA7Gzceoa7/beLX3yBeXw+5jQgMQQAkKQodSqdPGlu251QAzKn2fn4qhfY23976I1nuD2zMc+a3ib0EAEAnlTVSTZgUb6OH99eXLzZ7ZmhAQkhAMBTpNkA7xV83EkDEkMAgMMl2ABraUCKCADwNGgADUgBAQCeHg2gAa1HAICjogE0oN0IAHAsNIAGtBgBAJ4BDaABbUUAgGdGA2hAKxEA4LjQABrQPgQAOF40gAa0DAEAVoAG0IA2IQDAytAAGtAaBABYMRpAA9qBAAAnggbQgBYgAMAJogE0YNARAODEHdoA41Tk8jQAg4MAAM/KwQb82nXVXKmxoRQbMJTLNL1VOAEEAHi2qlob15nPfTWc/nudz301rFtnqrrpbVpjT2nAFveDvVFGlggMGgIArAIfNDak+VLbrivv3O0nJ1NpgEK88R35+96SGan0skyUgcLHBawOHzSSK3Pmkh0JNaD2MtJ7fjW/4R15CLGmAQOFzwpYNT4oc2k1wBjJaHpvPH+Lu2V7UXsaMEj4oIDVFBJsgFTkmpmJWzfTgAHDpwSssgQbICnPaMDg4SMCVh8NoAEDgc8HWBM0gAb0Pz6clotSiE1vxBP6Z0t6gwZ0G+AYM/2KT6bNouSsRgvFpidvlNQfW9JjNKD2camiAX2Kj6W1YlRmtX9e9307ZI1O3hiVOy3Mx/u+E0YKjgPSasDNVxXjhRY6NKAf8Zm0We60bz7e/92QFabZseusFhZ033ficGFSOwhQwg2Ym4vnvdg+/AdD573Y7puPmWt6m/BUBKDNopQ5OSPvm39WV8drJE/uFNBBaTbAWS10tK7QTduLc3/WTi/QgP5CANrMB60bNp/4il+cj3nW2PD1QUNj5lO76u8/FodoQHoNWC6VOb3ngixzWq54ZlwfIQBtFqPyTD+ajvd9O+TNnQVyVouLuvuRkPL070qzAZnT4kI8+zR36/Yid0p7CfQXAtByzmp2UXc/ElxDw7cboX0z8X99J442fSmiH6TZAOc0PRu3nuXe/Tr36HQseIdMfyAALeeDpsbMX+/yP3q0mdMvPigfNjfdV3fP/yZ+BNCVZgNyp/l98epfzraebh+bi46LAX2AALRcjBrK9b1H44331kMjpscvq+r+6f/yWPzwPZ7d/0Ml2ABjFIMmRszvviGbGDHey3AxoGkEoP180MSIueFe/6O9vb4U3N39v/Ge+vuPxeH07gI7tgQb4Jxm5+I5p7vfOs/tn4/cGdA4PoH26+6Gf/+x+NEv1yNTvTsICEGjw5qZiR++x0/0/OBjIBzegCnjQ8szmTktzcVff2X2ExvNcslBQMMIQBK6VwI+eJf/7H1+eLgXby2PUTKaL/UbH632zKrBH6H2uW4DnDXbris//aAfGzXGtPlmaWNU1Tplo3n7OW6xjPwktFkEIAkxylktVbryI9XCkobyNW9AVWt8g7nurvqT9/nJEQV2/48uBOVOmTNv3VFuu7a0zjjX5r8xZ1Utx8tfkU2NmZorAY0iAKkIQaOFZpd05Y1VMCZbyxFT1ZqaMnfc7z/4Bb9pg6nbO8tWS4iyRpNj5i+/4i+/rrS2zQ3oHgRsmDSv/GnDQUCzCEBCfNDYkP56l798x4HdzNqv8h8RpbLS5KS5c7ffdl1ZeRlx8ue4xCjvdfKUuW23v2xHy48DfNDoqM59oS1rjgCaRADS4oNOnjS37faX7ihdZiZGV7MBIUpRUxvNHbv8JTvKzJkia/Pp7LVQ1Qc+oHY3wFl1FuIFm7NT15uyogGNIQDJqWqdPGH+5iF/4fs7d38zTKwzPjzbSwIxqvIazhWjrvlk9bbrK2vX9ixTiyXSAEljQ0rw8eB9hQCkqPI6adz8/TfjRR8oP/0PfnzUrBsx4YQyEKNqr9xpctzsX9bbb6jee2sdpaK9Y6sHWt8AY9SptH692Xamm1vmhoDG8BefqNpralR5Zi79s/LC/975/Nf8yIhZN2KsUR3kg+LRz93HeGDux6gi08Q6s29Bv397ddZ/6Xz24XDqSUaR3bpnq/UNkGStfFDdB88qT5bZeMpzm94GNMYYGWl2WVbx1afZf/fL2eaftBvWGfnYKSWjTq1DH94Ypdwps5JUjJpyKe6ZiTvv8x++x3//8bhu2BRZC+dUg/JMe2bixZvdzu1F8NG36B3rIWh4RH/7cLj0zyuOAJpCACBnFaWZRQ1nOnWDeePp9tzT7M8/z9aVNm0wslKUjBQlq858nF6KZW3+are/9xvhvm+H/YtxtDDDhVp/F2sj2tqA7r0pZa3N/7Wzb145DwpsAgHAAc4qRFW1phfj+jEzOWpyF7ed6YonbuINUcWQ+cq3w33fDsOF/t/jscjMSKHcKUS+vWuolQ2IUZnT/gWd9b7O7KJ4UmwjCACewhhlVpVXHaSo2eUYo4w5cBAQo4ZzM1IceL5QjL14qgTUxgZ0AzCzqDP/W2eGADSE9zLgKbo/6JSUO0naNHH49bkYFYJkV/8mMhzDodeEd24vpDY0AI1jBeHpHfypz2H/OPYPhLB2UvhdEHqMAAADo30N4EFAzSIAwCBpVQOMOjW3jDSJAAADph0N8EHFsNl5X/3Dfc28rRoiAMAgakEDomScMiueFt4gAgAMpIFuQIzKnebm4v3fDaOF4SxQUwgAMKgGugHOypd64HtxmPM/zSEAwAA7tAHGqVj7l32uihCV5eYr/xQ6JXczNIm/e2CwHWzAr11XzZUaGxqABsQok+mLX/ePz0fuAW4QAQAGXlVr4zrzua+G03+v87mvhnXrTFU3vU1H132K+Nxs/MzDYWrU9H+uWowAAG3QfeHzfKlt15V37vaTk/3bgBCVD5nd/xx+sC/mGbv/TSIAQEv4oJFcmTOX7OjrBhgpRn3wrrpTcSdwwwgA0B4+KHN93QDvNT5u7v2a/9uvhakxzv80jAAArRL6uAFRMlYzi/GPP9c325Q2AgC0Td82oK41PmV2fL6+4yF2//sCAQBaqA8bUHuNj5t7HvIfuMtvmmp+eyACALTV4Q2YanKPu/sKudrr9z9Tzy1Fbv7qE3wOQGsd2oDP/qMfaugesRgVpWWvy68tv/SNsH7ceF4n1x8IANBmISh3MsZceWO1uHRgN7yXotSpNL7BXHtX/RcP+o3rDC8T7R8EAGg5HzSca3ZJ77yxkjUTY71rQIxS1IZN5rP3+Q99wW9abyqmfz8hAED7de8T/vT/9he+v3P3N8PEuClrrfUduLWXc5J0za3V2z9cdeoDt4Chf5iNpzy36W0A0AuZ0/Sichtv2V6cf6ab3x9jlFubncCq1uS4Kb0uvbb8ywf9pvXGiLc/9h2OAIBU1F5To3LOvO366ppbK2u0bsxUq30o4INi1OQG86VH/IXv73z6If+vfswoMv37EUcAQFqsUZQenYlbX2J/543ZuS9xy3OxrOWszLN7Mo8PMtL4mFlcih+4q/7Q5/3Msjb08JIDVooAACkqMj02p4kR/fvzsn/zC+7HTzJVJ5a1fJCzktFxtiBKIShKhdNwYbz0d1/3f3JnfcfDYdOksWYAXk6QMgIAJMpZ+aD9C/Enfsy8/Rx32SvcyZOmGDHlYoxSp1aMckbG6ikniYwU5eOB9/o6q6FccmbfXNz9z+FDn6+/+PUQZabGxL2+/Y8AAOkyknNaLrVYxvWj5hXPt2f/rH3Tz7mxIZ00ZeSkMnZKGfPUBBgVw0ZWS/NxodLu74Uvfj38zcPhh/vicq3JURmx4z8YCACQOmNkjSqvpVJlHU9db0ZybTvL+aCznmdf9gJbdp58cL8xKmt9/P46WvMP3wn3fzd0Ku2bj1OjJs/EOZ/BQgAAHOCszBMnf+aWYx20YcxMjZkQ4oHrw1EyCkE/nI7ea7gww7mcVe5UB37jP3gIAICnMJKMnJExqrxq/5RfB0XJSEOZZBSiYljzG8qwdrKmNwBAf4mSouon5np+5JCIqjnP0woEAMCxcGKnxbgTGAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFEEAAASRQAAIFH/H+w/8L0L75WgAAAAAElFTkSuQmCC" alt="KavoPDF app icon" width="72" height="72">
+          <div class="dl-title">
+            <h3>KavoPDF for Android</h3>
+            <p>Direct download — no account, no Play Store required.</p>
+          </div>
+        </div>
+
+        <dl class="dl-specs">
+          <div class="spec"><dt>Version</dt><dd id="dlVersion">—</dd></div>
+          <div class="spec"><dt>File size</dt><dd id="dlSize">—</dd></div>
+          <div class="spec"><dt>Requires</dt><dd id="dlRequires">Android 7.0+</dd></div>
+          <div class="spec"><dt>Updated</dt><dd id="dlUpdated">—</dd></div>
+        </dl>
+
+        <div class="dl-actions">
+          <a class="btn btn-primary btn-lg" id="dlBtn" href="https://github.com/kavopdf/app/releases/latest" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M5 20h14"/></svg>
+            Download KavoPDF.apk
+          </a>
+          <a class="btn btn-ghost btn-lg" href="https://github.com/kavopdf/app/releases" target="_blank" rel="noopener">All releases</a>
+        </div>
+        <p class="dl-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z"/></svg>
+          The button always points at the newest build on GitHub
+        </p>
+      </div>
+
+      <div class="steps" style="margin-top: var(--s-9)">
+        <div class="step" data-reveal>
+          <div class="step-num">01</div>
+          <div><h3>Tap download</h3><p>The <code>.apk</code> lands in your phone's Downloads folder. If Chrome warns you about the file type, tap <em>Download anyway</em> — that's the standard prompt for any app installed outside the Play Store.</p></div>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step-num">02</div>
+          <div><h3>Open it and allow the source</h3><p>Tap the downloaded file. Android will offer to take you to <em>Install unknown apps</em> for your browser or Files app — allow it once, then come back.</p></div>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step-num">03</div>
+          <div><h3>Install and open</h3><p>Tap <em>Install</em>, wait a few seconds, then <em>Open</em>. You can switch the "unknown apps" permission back off afterwards — the app keeps working.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="container">
+      <div class="prose" data-reveal>
+        <h2>Is installing an APK safe?</h2>
+        <p>An APK is just Android's app file — the same format the Play Store installs for you. The only difference is that you're the one doing the installing, so Android asks for your permission first. KavoPDF asks for access to the files you choose to open, and nothing else.</p>
+        <h3>Permissions, and why</h3>
+        <ul>
+          <li><strong>Files and storage</strong> — to open the PDFs you pick and save your edits back to them.</li>
+          <li><strong>Camera</strong> — only while the document scanner is open, never in the background.</li>
+          <li><strong>No internet permission needed for editing</strong> — every tool runs on-device.</li>
+        </ul>
+        <p>If a download ever looks like it came from somewhere other than this page, don't install it. The only official source is this site and the GitHub repository it links to.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="view" id="faq" data-title="FAQ — KavoPDF">
+  <section>
+    <div class="container split">
+      <div class="split-intro" data-reveal>
+        <span class="eyebrow">FAQ</span>
+        <h1 style="font-size: var(--text-3xl); margin-top: var(--s-4)">Questions, answered plainly.</h1>
+        <p class="lede">Install steps, privacy, file formats, and what the app can and can&rsquo;t do.</p>
+        <nav class="faq-jump" aria-label="Jump to a section">
+          <a href="#faq-install">Installing &amp; updating</a>
+          <a href="#faq-privacy">Privacy &amp; your files</a>
+          <a href="#faq-tools">Using the tools</a>
+          <a href="#faq-help">Support</a>
+        </nav>
+        <a class="btn btn-ghost" href="#contact" data-nav="contact" style="margin-top: var(--s-6)">Still stuck? Ask me</a>
+      </div>
+
+      <div>
+        <div class="faq-group" id="faq-install" data-reveal>
+          <h2>Installing &amp; updating</h2>
+          <p>The bits people hit before they ever open a PDF.</p>
+          <div class="faq-list">
+          <div class="faq-item" data-open="true">
+            <button class="faq-q" aria-expanded="true">Is KavoPDF really free?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>Yes. There's no subscription and no locked &ldquo;Pro&rdquo; tab hiding the tools you came for. It's distributed directly as an APK, which is how it stays that way.</p></div></div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-q" aria-expanded="false">Why isn&rsquo;t it on the Play Store?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>Publishing on the Play Store carries a one-time developer fee, and this app is a direct, free release. Installing an APK yourself is quick &mdash; Android asks for permission once and then treats it like any other app.</p></div></div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-q" aria-expanded="false">Which Android versions does it support?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>Android 7.0 (Nougat) and newer. That is the version the app is built and tested against &mdash; the download panel above reads the real minimum from the build file, so the two can never drift apart.</p></div></div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-q" aria-expanded="false">How do I know I&rsquo;m getting the newest version?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>The download button always points at the latest release on GitHub, so it never hands you an old build. You don&rsquo;t need to uninstall first &mdash; installing a newer APK over an older one just updates it.</p></div></div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-q" aria-expanded="false">How do I uninstall it?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>Like any app: long-press the icon &rarr; <em>App info</em> &rarr; <em>Uninstall</em>, or Settings &rarr; Apps &rarr; KavoPDF &rarr; Uninstall. Your PDFs stay exactly where they were.</p></div></div>
+          </div>
+          </div>
+        </div>
+        <div class="faq-group" id="faq-privacy" data-reveal>
+          <h2>Privacy &amp; your files</h2>
+          <p>Where your documents actually go &mdash; spoiler: nowhere.</p>
+          <div class="faq-list">
+          <div class="faq-item" data-open="false">
+            <button class="faq-q" aria-expanded="false">Are my documents uploaded to a server?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>No. Reading, editing, merging, compressing, redacting and scanning all happen on your phone. Your files never leave the device &mdash; see the <a href="#privacy" data-nav="privacy" style="color:var(--accent-text);text-decoration:underline;">privacy page</a> for the detail.</p></div></div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-q" aria-expanded="false">Does it work without internet?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>Yes &mdash; the whole app works offline. The only time you need a connection is the one download that installs it.</p></div></div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-q" aria-expanded="false">Will it open password-protected PDFs?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>If you know the password, yes &mdash; it&rsquo;ll ask once and remember it for the session. You can also add a password with <em>Protect</em>, or remove a known one with <em>Unlock</em>.</p></div></div>
+          </div>
+          </div>
+        </div>
+        <div class="faq-group" id="faq-tools" data-reveal>
+          <h2>Using the tools</h2>
+          <p>How the trickier features behave.</p>
+          <div class="faq-list">
+          <div class="faq-item" data-open="false">
+            <button class="faq-q" aria-expanded="false">What&rsquo;s the difference between redact and watermark?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>A watermark adds a visible stamp over the page &mdash; useful for &ldquo;DRAFT&rdquo; or your name. Redaction removes the underlying text entirely, so it can&rsquo;t be selected or recovered. Use redaction when the information must genuinely be gone.</p></div></div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-q" aria-expanded="false">Can I edit the text inside a scanned PDF?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>You can annotate over it and add text boxes on top. To turn a photo of text into real, selectable text, use <em>Make searchable (OCR)</em> &mdash; it works best on clean, straight, well-lit scans.</p></div></div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-q" aria-expanded="false">What can the QR code scanner do?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>Open a link, copy the text, or save the contact &mdash; without switching to another app. It reads from the camera, or from a QR code inside an image you already have.</p></div></div>
+          </div>
+          </div>
+        </div>
+        <div class="faq-group" id="faq-help" data-reveal>
+          <h2>Support</h2>
+          <p>When something doesn&rsquo;t behave.</p>
+          <div class="faq-list">
+          <div class="faq-item" data-open="false">
+            <button class="faq-q" aria-expanded="false">Found a bug or want a feature?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div><p>Please tell me &mdash; the <a href="#contact" data-nav="contact" style="color:var(--accent-text);text-decoration:underline;">contact page</a> has the details. Tell me your phone model and Android version; it makes bugs far easier to pin down.</p></div></div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ PRIVACY ============ -->
+<section class="view" id="privacy" data-title="Privacy Policy — KavoPDF">
+  <section>
+    <div class="container split">
+      <div class="split-intro" data-reveal>
+        <span class="eyebrow">Privacy</span>
+        <h1 style="font-size: var(--text-3xl); margin-top: var(--s-4)">Privacy Policy</h1>
+        <p class="updated" style="margin-top: var(--s-4)">Last updated: 24 October 2026</p>
+        <nav class="toc" aria-label="On this page">
+          <a href="#pv-collect">What we collect</a>
+          <a href="#pv-files">Your files</a>
+          <a href="#pv-perms">Permissions</a>
+          <a href="#pv-network">Network access</a>
+          <a href="#pv-third">Third parties</a>
+          <a href="#pv-children">Children</a>
+          <a href="#pv-changes">Changes to this policy</a>
+          <a href="#pv-contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="prose" data-reveal>
+        <div class="summary-card">
+          <h3>The short version</h3>
+          <p style="margin-bottom: 0">KavoPDF processes your PDFs on your device. It does not upload your files, does not require an account, and does not sell or share your data. Used offline, nothing about your documents ever touches a network.</p>
+        </div>
+
+        <p>KavoPDF is built so that your documents stay yours. This policy explains, in plain language, what the app does and does not do with your information.</p>
+
+        <div class="policy-block" id="pv-collect">
+          <h3>What we collect</h3>
+          <p>Nothing that identifies you, by default. The app does not ask for your name, email or phone number, and it does not create a user profile. There is no sign-in.</p>
+        </div>
+        <div class="policy-block" id="pv-files">
+          <h3>Your files</h3>
+          <p>PDFs you open, edit, merge, split, compress, sign, redact, scan or create are handled entirely on your phone. They are never copied to a server we control, and we have no way to see them.</p>
+        </div>
+        <div class="policy-block" id="pv-perms">
+          <h3>Permissions</h3>
+          <ul>
+            <li><strong>Files and storage</strong> &mdash; used to open the documents you choose and save changes back to them.</li>
+            <li><strong>Camera</strong> &mdash; used only when you start the document scanner or the QR scanner, and only while that screen is open.</li>
+          </ul>
+          <p>The app does not request access to your contacts, call logs, location or messages.</p>
+        </div>
+        <div class="policy-block" id="pv-network">
+          <h3>Network access</h3>
+          <p>Core reading, editing, scanning and creation features work offline. This website contacts GitHub's public API to show you the newest release details; that request contains no information about you or your documents. If a future app version includes an online feature, this policy will be updated before that feature ships, and it will be opt-in.</p>
+        </div>
+        <div class="policy-block" id="pv-third">
+          <h3>Third parties</h3>
+          <p>We do not sell, rent or trade your information. The app does not embed advertising or analytics trackers that profile you across other apps.</p>
+        </div>
+        <div class="policy-block" id="pv-children">
+          <h3>Children</h3>
+          <p>KavoPDF is a general-purpose document tool and is not directed at children under 13. It collects no personal information from anyone, including children.</p>
+        </div>
+        <div class="policy-block" id="pv-changes">
+          <h3>Changes to this policy</h3>
+          <p>If this policy changes, the &ldquo;last updated&rdquo; date above will change too, and material changes will be noted on this page.</p>
+        </div>
+        <div class="policy-block" id="pv-contact">
+          <h3>Contact</h3>
+          <p>Questions about privacy? Open an issue at <a href="https://github.com/kavopdf/app/issues">github.com/kavopdf/app</a> and I&rsquo;ll answer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="view" id="contact" data-title="Contact — KavoPDF">
+  <section>
+    <div class="container split">
+      <div class="split-intro" data-reveal>
+        <span class="eyebrow">Contact</span>
+        <h1 style="font-size: var(--text-3xl); margin-top: var(--s-4)">Tell me what broke.</h1>
+        <p style="margin-top: var(--s-4); color: var(--ink-soft)">KavoPDF is built and looked after by one person. There is no support desk and no ticket queue &mdash; just a public issue tracker that I actually read.</p>
+      </div>
+
+      <div class="prose" data-reveal>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Found a bug</h3>
+            <p>Open an issue with your phone model, the Android version, and what you were doing just before it went wrong.</p>
+            <a class="link" href="https://github.com/kavopdf/app/issues/new" target="_blank" rel="noopener">Report a bug &rarr;</a>
+          </div>
+          <div class="contact-card">
+            <h3>Want a feature</h3>
+            <p>Describe the job you were trying to get done, not only the button you want. It makes building the right thing far easier.</p>
+            <a class="link" href="https://github.com/kavopdf/app/issues/new" target="_blank" rel="noopener">Suggest a feature &rarr;</a>
+          </div>
+          <div class="contact-card">
+            <h3>A privacy or security question</h3>
+            <p>Issues are public, so describe the problem without attaching any of your own documents.</p>
+            <a class="link" href="https://github.com/kavopdf/app/issues/new" target="_blank" rel="noopener">Open an issue &rarr;</a>
+          </div>
+          <div class="contact-card">
+            <h3>Just want the newest build</h3>
+            <p>Every release, with its notes, lives on GitHub. The download page always points at the newest one.</p>
+            <a class="link" href="#download" data-nav="download">Go to the download page &rarr;</a>
+          </div>
+        </div>
+
+        <div class="summary-card" style="margin-top: var(--s-6)">
+          <h3>What to include</h3>
+          <ul style="margin-bottom: 0">
+            <li>Phone model and Android version</li>
+            <li>The KavoPDF version &mdash; Settings, or the Activity log</li>
+            <li>What you expected, and what actually happened</li>
+            <li>The steps that reproduce it, if you can find them</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand"><img src="data:image/png;base64,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" alt="" width="30" height="30">KavoPDF</span>
+        <p>A free Android app with 26 PDF tools — create, edit, organise, secure and output, all on your phone, offline, without an account.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>App</h4>
+          <ul>
+            <li><a href="#features" data-nav="features">All 26 tools</a></li>
+            <li><a href="#download" data-nav="download">Download</a></li>
+            <li><a href="#faq" data-nav="faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <ul>
+            <li><a href="#privacy" data-nav="privacy">Privacy policy</a></li>
+            <li><a href="#contact" data-nav="contact">Contact</a></li>
+            <li><a href="#home" data-nav="home">Home</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Source</h4>
+          <ul>
+            <li><a href="https://github.com/kavopdf/app" target="_blank" rel="noopener">GitHub repository</a></li>
+            <li><a href="https://github.com/kavopdf/app/releases" target="_blank" rel="noopener">Releases</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> KavoPDF. Made in India.</span>
+      <span>Not affiliated with Google or Adobe.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cssMs = function (name, fb) {
+    return parseFloat(getComputedStyle(root).getPropertyValue(name)) || fb;
+  };
+
+  /* ---------- Sticky header ---------- */
+  var header = document.querySelector('.site-header');
+  var scrolledState = null;
+  var onScroll = function () {
+    var now = window.scrollY > 12;
+    if (now === scrolledState) return;          // nothing changed, touch nothing
+    scrolledState = now;
+    header.classList.toggle('scrolled', now);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- Mobile menu ---------- */
+  var menu = document.getElementById('mobileMenu');
+  var openBtn = document.querySelector('.nav-toggle[aria-controls="mobileMenu"]');
+  function setMenu(open) {
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', String(!open));
+    openBtn.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  openBtn.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
+  document.querySelectorAll('[data-close-menu]').forEach(function (b) {
+    b.addEventListener('click', function () { setMenu(false); });
+  });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setMenu(false); });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+
+  /* ---------- Router ---------- */
+  var views = Array.prototype.slice.call(document.querySelectorAll('.view'));
+  var routing = false;
+  var pendingView = null;
+
+  function releaseNav() {
+    routing = false;
+    if (pendingView) {
+      var queued = pendingView;
+      pendingView = null;
+      navigateTo(queued);
+    }
+  }
+
+  function syncNav(id) {
+    document.querySelectorAll('[data-nav]').forEach(function (a) {
+      if (a.getAttribute('data-nav') === id) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+  }
+
+  function armReveals(scope) {
+    var els = scope.querySelectorAll('[data-reveal]');
+    if (reduceMotion) { els.forEach(function (e) { e.classList.add('is-revealed'); }); return; }
+    els.forEach(function (e, i) {
+      if (e.classList.contains('is-revealed')) return;
+      e.style.transitionDelay = ((i % 4) * 60) + 'ms';
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-revealed'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function (e) { io.observe(e); });
+  }
+
+  function activate(current, next) {
+    if (current) current.classList.remove('is-active', 'is-leaving');
+    next.classList.add('is-active');
+    if ('scrollBehavior' in document.documentElement.style) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    } else {
+      window.scrollTo(0, 0);
+    }
+    syncNav(next.id);
+    if (next.dataset.title) document.title = next.dataset.title;
+    measurePhoneScroll();   // a hidden view measures as zero, so re-measure on entry
+  }
+
+  function navigateTo(id) {
+    var current = document.querySelector('.view.is-active');
+    var next = document.getElementById(id);
+    if (!next || !next.classList.contains('view') || next === current) return;
+    // a transition is still running: remember this one and run it next, never drop a click
+    if (routing) { pendingView = id; return; }
+    routing = true;
+    // safety net: navigation must never stay locked
+    setTimeout(releaseNav, 900);
+
+    if (location.hash.slice(1) !== id) {
+      try { history.replaceState(null, '', '#' + id); } catch (e) { /* some contexts block this */ }
+    }
+
+    if (document.startViewTransition && !reduceMotion) {
+      var swapped = false;
+      var swap = function () { if (swapped) return; swapped = true; activate(current, next); };
+      try {
+        var vt = document.startViewTransition(swap);
+        if (vt && vt.finished && typeof vt.finished.finally === 'function') {
+          vt.finished.finally(releaseNav);
+        } else { swap(); releaseNav(); }
+      } catch (e) { swap(); releaseNav(); }
+      // if the transition never runs its callback, swap anyway
+      setTimeout(swap, 300);
+      // release the nav lock once the swap has settled, not when the animation ends
+      setTimeout(releaseNav, 420);
+      armReveals(next);
+      return;
+    }
+    if (reduceMotion) { activate(current, next); armReveals(next); releaseNav(); return; }
+
+    if (current) { current.classList.add('is-leaving'); current.classList.remove('is-active'); }
+    setTimeout(function () {
+      next.classList.add('is-active', 'is-entering');
+      void next.offsetWidth;
+      next.classList.remove('is-entering');
+      activate(current, next);
+      armReveals(next);
+      setTimeout(releaseNav, cssMs('--page-t-in', 300));
+    }, cssMs('--page-t-out', 180));
+  }
+
+  document.querySelectorAll('[data-nav]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      setMenu(false);
+      navigateTo(a.getAttribute('data-nav'));
+    });
+  });
+  window.addEventListener('hashchange', function () {
+    navigateTo(location.hash.slice(1) || views[0].id);
+  });
+
+  var initial = location.hash.slice(1);
+  var initEl = initial ? document.getElementById(initial) : null;
+  if (initEl && initEl.classList.contains('view') && initial !== views[0].id) {
+    views.forEach(function (v) { v.classList.remove('is-active'); });
+    initEl.classList.add('is-active');
+    syncNav(initial);
+    if (initEl.dataset.title) document.title = initEl.dataset.title;
+  } else {
+    syncNav(views[0].id);
+  }
+  views.forEach(function (v) { if (v.classList.contains('is-active')) armReveals(v); });
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll('.faq-q').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var open = item.getAttribute('data-open') === 'true';
+      item.setAttribute('data-open', String(!open));
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  });
+
+  /* ---------- Mode switcher ---------- */
+  var tabs = document.querySelectorAll('[data-mode]');
+  var screens = document.querySelectorAll('.screen[data-screen]');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var mode = tab.getAttribute('data-mode');
+      tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t === tab)); });
+      screens.forEach(function (s) { s.classList.toggle('is-on', s.getAttribute('data-screen') === mode); });
+    });
+  });
+
+  /* ---------- Phone mockup auto-scroll ---------- */
+  function measurePhoneScroll() {
+    if (reduceMotion) return;
+    document.querySelectorAll('.phone-screen.scrollable').forEach(function (ps) {
+      var track = ps.querySelector('.app-track');
+      if (!track) return;
+      var view = track.parentElement.clientHeight;
+      if (!view) return;   // hidden view measures as zero — keep its last good value
+      track.style.setProperty('--scroll-max', Math.max(0, track.scrollHeight - view) + 'px');
+    });
+  }
+  measurePhoneScroll();
+  window.addEventListener('load', measurePhoneScroll);
+  setTimeout(measurePhoneScroll, 900);
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(measurePhoneScroll, 150);
+  }, { passive: true });
+
+  // pause the scroll animation for any phone that is off-screen
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    var phoneIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var track = en.target.querySelector('.app-track');
+        if (track) track.classList.toggle('is-paused', !en.isIntersecting);
+      });
+    }, { rootMargin: '120px' });
+    document.querySelectorAll('.phone-screen.scrollable').forEach(function (ps) { phoneIO.observe(ps); });
+  }
+
+  /* ---------- Always-latest download ----------
+     Nothing about the build is typed in here. The version, the file size and the date
+     come from the newest GitHub release; the minimum Android version is read from the
+     repository's own build file. Publish a release and every figure on this page
+     follows it - there is no second place to update. */
+  (function latest() {
+    var btn = document.getElementById('dlBtn');
+    if (!btn) return;
+    var API = 'https://api.github.com/repos/kavopdf/app/releases/latest';
+    var BUILD = 'https://raw.githubusercontent.com/kavopdf/app/main/app/build.gradle';
+    var LOCAL = 'KavoPDF.apk';
+    var RELEASES = 'https://github.com/kavopdf/app/releases';
+
+    // API level -> the Android version people know it by.
+    var ANDROID = { 21: '5.0', 22: '5.1', 23: '6.0', 24: '7.0', 25: '7.1', 26: '8.0',
+                    27: '8.1', 28: '9', 29: '10', 30: '11', 31: '12', 32: '12L',
+                    33: '13', 34: '14', 35: '15', 36: '16' };
+
+    // Always overwrite. A stale number is worse than a dash.
+    function setText(id, value) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = value;
+    }
+
+    function humanSize(bytes) {
+      if (!bytes || bytes < 0) return '—';
+      var mb = bytes / 1048576;
+      return (mb >= 100 ? mb.toFixed(0) : mb.toFixed(1)) + ' MB';
+    }
+
+    function humanDate(iso) {
+      if (!iso) return '—';
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return '—';
+      return d.toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+    }
+
+    function fallback() {
+      fetch(LOCAL, { method: 'HEAD', cache: 'no-store' })
+        .then(function (r) {
+          var ct = (r.headers.get('content-type') || '');
+          btn.href = (r.ok && !/text\/html/i.test(ct)) ? LOCAL : RELEASES;
+        })
+        .catch(function () { btn.href = RELEASES; });
+    }
+
+    // The minimum Android version is a property of the build, not of the release, so it
+    // is parsed out of the repository's build file instead of being written down here.
+    fetch(BUILD, { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(new Error('no build file')); })
+      .then(function (txt) {
+        var m = /\bminSdk\s*(\d+)/.exec(txt);
+        if (m) setText('dlRequires', 'Android ' + (ANDROID[m[1]] || m[1]) + '+');
+      })
+      .catch(function () { /* keep whatever the page shipped with */ });
+
+    fetch(API, { headers: { Accept: 'application/vnd.github+json' } })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('no release')); })
+      .then(function (rel) {
+        var apk = (rel.assets || []).filter(function (a) { return /\.apk$/i.test(a.name); })[0];
+        if (!apk) throw new Error('no apk asset');
+        btn.href = apk.browser_download_url;
+        btn.setAttribute('download', apk.name);
+        setText('dlVersion', rel.tag_name || rel.name || 'Latest release');
+        setText('dlSize', humanSize(apk.size));
+        setText('dlUpdated', humanDate(rel.published_at || apk.updated_at));
+      })
+      .catch(fallback);
+  })();
+
+  /* ---------- Year ---------- */
+  var y = document.getElementById('year');
+  if (y) y.textContent = String(new Date().getFullYear());
+})();
+</script>
+</body>
+</html>
