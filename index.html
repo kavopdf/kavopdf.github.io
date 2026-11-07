@@ -1445,6 +1445,19 @@ section { padding-block: clamp(3.2rem, 7.5vw, 6.5rem); }
     });
   }
 
+  // A view that has just been shown is already in the viewport, so there is nothing to
+  // scroll-reveal: reveal it now. armReveals() observes with an IntersectionObserver, and
+  // an observer only fires for an element that has a box - a view that is still hidden has
+  // none, so a view armed while it was hidden kept every [data-reveal] at opacity 0 and
+  // opened blank. The contact page is the one people noticed: opening /#contact directly
+  // showed an empty page, because the initial-load path below never called armReveals at
+  // all, and the view-transition path called it before the swap had made the view visible.
+  function revealNow(scope) {
+    if (!scope) return;
+    var els = scope.querySelectorAll('[data-reveal]');
+    for (var i = 0; i < els.length; i++) els[i].classList.add('is-revealed');
+  }
+
   function armReveals(scope) {
     var els = scope.querySelectorAll('[data-reveal]');
     if (reduceMotion) { els.forEach(function (e) { e.classList.add('is-revealed'); }); return; }
@@ -1470,6 +1483,9 @@ section { padding-block: clamp(3.2rem, 7.5vw, 6.5rem); }
     }
     syncNav(next.id);
     if (next.dataset.title) document.title = next.dataset.title;
+    // The view is visible from here on, so its reveals can run. The CSS transition on
+    // [data-reveal] still fades them in, so this is a fade rather than a jump.
+    revealNow(next);
     measurePhoneScroll();   // a hidden view measures as zero, so re-measure on entry
   }
 
@@ -1500,7 +1516,9 @@ section { padding-block: clamp(3.2rem, 7.5vw, 6.5rem); }
       setTimeout(swap, 300);
       // release the nav lock once the swap has settled, not when the animation ends
       setTimeout(releaseNav, 420);
-      armReveals(next);
+      // No armReveals(next) here: activate() reveals the view once the swap has made it
+      // visible. Arming before the swap observed elements that had no box yet, so the
+      // observer never fired and the view stayed blank.
       return;
     }
     if (reduceMotion) { activate(current, next); armReveals(next); releaseNav(); return; }
@@ -1533,6 +1551,9 @@ section { padding-block: clamp(3.2rem, 7.5vw, 6.5rem); }
     views.forEach(function (v) { v.classList.remove('is-active'); });
     initEl.classList.add('is-active');
     syncNav(initial);
+    // Nothing arms the reveals on this path: it does not go through activate(), so opening
+    // the site straight at /#contact left the page blank.
+    revealNow(initEl);
     if (initEl.dataset.title) document.title = initEl.dataset.title;
   } else {
     syncNav(views[0].id);
