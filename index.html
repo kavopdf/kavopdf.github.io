@@ -56,14 +56,19 @@
   --s-1:.25rem; --s-2:.5rem; --s-3:.75rem; --s-4:1rem; --s-5:1.5rem;
   --s-6:2rem; --s-7:3rem; --s-8:4rem; --s-9:6rem; --s-10:8rem;
 
-  --text-xs:  clamp(.75rem, .74rem + .05vw, .81rem);
-  --text-sm:  clamp(.86rem, .84rem + .08vw, .93rem);
-  --text-base:clamp(1rem, .97rem + .15vw, 1.1rem);
-  --text-lg:  clamp(1.15rem, 1.1rem + .25vw, 1.32rem);
-  --text-xl:  clamp(1.3rem, 1.2rem + .45vw, 1.62rem);
-  --text-2xl: clamp(1.7rem, 1.45rem + 1vw, 2.4rem);
-  --text-3xl: clamp(2.05rem, 1.7rem + 1.7vw, 3.2rem);
-  --text-4xl: clamp(2.5rem, 1.8rem + 3.4vw, 4.4rem);
+  /* A fluid scale, not a flat one. The old range was 16.0 -> 17.6 px on body copy - six tenths
+     of a pixel either side of a single size - so on a phone the text sat heavy in a narrow
+     column and on a desktop it sat small in a 1140 px container. Each step now moves with the
+     viewport across the whole range: 15.2 -> 18.2 px on body copy, and the small sizes come
+     down at the narrow end instead of holding at a desktop size. */
+  --text-xs:  clamp(.7rem,  .68rem + .1vw,  .82rem);
+  --text-sm:  clamp(.8rem,  .77rem + .14vw, .94rem);
+  --text-base:clamp(.95rem, .9rem  + .26vw, 1.15rem);
+  --text-lg:  clamp(1.05rem,.97rem + .38vw, 1.4rem);
+  --text-xl:  clamp(1.2rem, 1.04rem + .62vw, 1.72rem);
+  --text-2xl: clamp(1.55rem,1.24rem + 1.25vw,2.55rem);
+  --text-3xl: clamp(1.85rem,1.42rem + 1.9vw, 3.1rem);
+  --text-4xl: clamp(2.2rem, 1.6rem  + 2.8vw, 3.9rem);
 
   --ease-out-soft: cubic-bezier(.22,1,.36,1);
   --ease-in-out:   cubic-bezier(.65,0,.35,1);
